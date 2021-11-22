@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/sairaj/Program/Computer2021-22/CN/Assignments/06-RDT/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+ACK_FLAG_START	library.py	/^    ACK_FLAG_START = 16 * 2$/;"	v	class:Packet
+CHECKSUM_START	library.py	/^    CHECKSUM_START = 16 * 4$/;"	v	class:Packet
+CHUNK_SIZE	library.py	/^    CHUNK_SIZE = 1 << 10$/;"	v	class:RDT
+DATA_LEN_START	library.py	/^    DATA_LEN_START = 16 * 3$/;"	v	class:Packet
+DATA_START	library.py	/^    DATA_START = 16 * 5$/;"	v	class:Packet
+FIELD_LEN	library.py	/^    FIELD_LEN = 16$/;"	v	class:Packet
+IDENTITY_START	library.py	/^    IDENTITY_START = 16 * 0$/;"	v	class:Packet
+INITIAL_TIME_OUT	library.py	/^    INITIAL_TIME_OUT = 1$/;"	v	class:RDT
+MAX_TIMEOUT	library.py	/^    MAX_TIMEOUT = 3$/;"	v	class:RDT
+Packet	library.py	/^class Packet:$/;"	c
+RDT	library.py	/^class RDT:$/;"	c
+SEND_PKT	library.py	/^    SEND_PKT = 2$/;"	v	class:RDT
+SEQ_NO_START	library.py	/^    SEQ_NO_START = 16 * 1$/;"	v	class:Packet
+UDT	library.py	/^class UDT:$/;"	c
+WAIT_FOR_ACK	library.py	/^    WAIT_FOR_ACK = 1$/;"	v	class:RDT
+WAIT_FOR_CALL	library.py	/^    WAIT_FOR_CALL = 0$/;"	v	class:RDT
+__init__	library.py	/^    def __init__(self, probability):$/;"	m	class:RDT
+__init__	library.py	/^    def __init__(self, probability=1):$/;"	m	class:UDT
+_recv	library.py	/^    def _recv(self, buffersize):$/;"	m	class:RDT
+bind	library.py	/^    def bind(self, address):$/;"	m	class:RDT
+bind	library.py	/^    def bind(self, address):$/;"	m	class:UDT
+close	library.py	/^    def close():$/;"	m	class:RDT
+connect	library.py	/^    def connect(self, address):$/;"	m	class:RDT
+data	test_server.py	/^data = rdt.recv(1024)$/;"	v
+droppacket	library.py	/^    def droppacket(self):$/;"	m	class:UDT
+estimate_timeout	library.py	/^    def estimate_timeout(self):$/;"	m	class:RDT
+extract	library.py	/^    def extract(self):$/;"	m	class:Packet
+from_bytes	library.py	/^    def from_bytes(self, pkt):$/;"	m	class:Packet
+get16BitCheckSum	library.py	/^def get16BitCheckSum(data):$/;"	f
+get_id	library.py	/^    def get_id(self):$/;"	m	class:Packet
+get_seq_no	library.py	/^    def get_seq_no(self):$/;"	m	class:Packet
+initrecvr	library.py	/^    def initrecvr(self):$/;"	m	class:RDT
+initsender	library.py	/^    def initsender(self):$/;"	m	class:RDT
+is_currupted	library.py	/^    def is_currupted(self):$/;"	m	class:Packet
+isack	library.py	/^    def isack(self):$/;"	m	class:Packet
+make_pkt	library.py	/^    def make_pkt(self, identity, seq_no, isack, checksum, data):$/;"	m	class:Packet
+rdt	test_client.py	/^rdt = RDT(0.5)$/;"	v
+rdt	test_server.py	/^rdt = RDT(0.5)$/;"	v
+recv	library.py	/^    def recv(self, buffersize):$/;"	m	class:RDT
+recvfrom	library.py	/^    def recvfrom(self, bufsize):$/;"	m	class:UDT
+send	library.py	/^    def send(self, data):$/;"	m	class:RDT
+sendto	library.py	/^    def sendto(self, data, address):$/;"	m	class:UDT
+setblocking	library.py	/^    def setblocking(self, flag):$/;"	m	class:UDT
+settimeout	library.py	/^    def settimeout(self, flag):$/;"	m	class:UDT
+to_bytes	library.py	/^    def to_bytes(self):$/;"	m	class:Packet
+validate16bitCheckSum	library.py	/^def validate16bitCheckSum(checksum, data):$/;"	f

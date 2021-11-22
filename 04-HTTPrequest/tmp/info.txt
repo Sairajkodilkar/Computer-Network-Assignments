@@ -1,0 +1,6 @@
+GET: request line
+HOST : header line, specify the hostname
+RANGE : bytes start-end  
+	-specify the byte ranges to download
+
+

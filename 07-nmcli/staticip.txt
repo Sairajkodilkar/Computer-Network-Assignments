@@ -1,0 +1,25 @@
+$nmcli conn add conn-name sskk ifname wlp7s0 type wifi ip4 192.168.43.220/24 gw4 192.168.43.1 ipv4 dns "8.8.8.8" ssid sskk
+Connection 'sskk' (fdb65622-4690-4b7c-8b04-70179866d9d3) successfully added.
+
+$nmcli conn up sskk 
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/76)
+
+$ifconfig -a
+wlp7s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.43.220  netmask 255.255.255.0  broadcast 192.168.43.255
+        inet6 2401:4900:1972:b388:ddf:ca63:cb29:ed4e  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::6e6a:e5b5:c8fd:2667  prefixlen 64  scopeid 0x20<link>
+        ether f8:a2:d6:ca:9d:3b  txqueuelen 1000  (Ethernet)
+        RX packets 576968  bytes 459958926 (438.6 MiB)
+        RX errors 0  dropped 10  overruns 0  frame 0
+        TX packets 372252  bytes 72465600 (69.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+$ping google.com
+PING google.com(bom07s30-in-x0e.1e100.net (2404:6800:4009:820::200e)) 56 data bytes
+64 bytes from bom07s30-in-x0e.1e100.net (2404:6800:4009:820::200e): icmp_seq=1 ttl=114 time=237 ms
+64 bytes from bom07s30-in-x0e.1e100.net (2404:6800:4009:820::200e): icmp_seq=2 ttl=114 time=196 ms
+^C
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 196.465/216.848/237.232/20.383 ms

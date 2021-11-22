@@ -1,0 +1,228 @@
+23:32:18.703312 IP anton.46496 > e2e-12-49.ssdcloudindia.net.http: Flags [P.], seq 1266953488:1266953629, ack 863024217, win 502, options [nop,nop,TS val 2294251148 ecr 4219835329], length 141: HTTP: GET /main.js HTTP/1.1
+E.....@.@.z.
+dl>..c1...PK.-.3p.Y...........
+..~.....GET /main.js HTTP/1.1
+User-Agent: Wget/1.21.1
+Accept: */*
+Accept-Encoding: identity
+Host: www.shakthimaan.com
+Connection: Keep-Alive
+
+
+23:32:18.756924 IP e2e-12-49.ssdcloudindia.net.http > anton.46496: Flags [.], seq 1:1369, ack 141, win 59, options [nop,nop,TS val 4219835338 ecr 2294251148], length 1368: HTTP: HTTP/1.1 200 OK
+E.....@.5.....c1
+dl>.P..3p.YK.-....;T......
+......~.HTTP/1.1 200 OK
+Server: nginx/1.10.3
+Date: Wed, 15 Sep 2021 18:02:18 GMT
+Content-Type: application/javascript
+Content-Length: 3166
+Last-Modified: Fri, 27 Mar 2020 15:01:41 GMT
+Connection: keep-alive
+ETag: "5e7e1555-c5e"
+Accept-Ranges: bytes
+
+var footer="Powered by GNU/Linux. Copyright (C) 2005-2019. Shakthi Kannan. <a href=\"http://www.shakthimaan.com/disclaimer.html\">Disclaimer</a>. XHTML 1.0 &amp; CSS.";
+
+var links = { home: "http://www.shakthimaan.com/index.html",
+	      blog: "http://www.shakthimaan.com/news.html",
+	      downloads: "http://www.shakthimaan.com/downloads.html",
+	      work: "http://www.shakthimaan.com/work.html",
+	      acad: "http://www.shakthimaan.com/acad.html",
+	      resume: "http://www.shakthimaan.com/resume.html",
+	      installs: "http://www.shakthimaan.com/installs/install.html",
+	      links: "http://www.shakthimaan.com/links/documentation.html",
+	      misc: "http://www.shakthimaan.com/misc/glv.html",
+              gallery: "https://gallery.shakthimaan.com",
+	      about: "http://www.shakthimaan.com/about.html",
+	    }
+
+
+window.onload = function() {
+
+    var p = document.getElementById("links")
+
+    for (var name in links) {
+	var a = document.createElement("a")
+	a.setAttribute("href", links[name])
+	a.innerHTML = "/" + name + "&nbsp;"
+	a.className = "links"
+	p.appendChild(a)
+    }
+}
+
+/* header links */
+var
+23:32:18.756925 IP e2e-12-49.ssdcloudindia.net.http > anton.46496: Flags [P.], seq 2737:3419, ack 141, win 59, options [nop,nop,TS val 4219835338 ecr 2294251148], length 682: HTTP
+E.....@.5.....c1
+dl>.P..3p.	K.-....;^......
+......~.[6]="vlsi";
+links_links[7]="wireless";
+
+/* misc links */
+var misc_links=new Array(8);
+misc_links[0]="books";
+misc_links[1]="database";
+misc_links[2]="glv";
+misc_links[3]="movies";
+misc_links[4]="quick-tips";
+misc_links[5]="quotes";
+misc_links[6]="study-abroad";
+misc_links[7]="to-students";
+
+/* installs links */
+var installs_links=new Array(5);
+installs_links[0]="configuration"
+installs_links[1]="desktops"
+installs_links[2]="embedded";
+installs_links[3]="laptops";
+installs_links[4]="networking";
+
+/* news archives */
+var news_links=new Array(6);
+news_links[0]="2011";
+news_links[1]="2010";
+news_links[2]="2009";
+news_links[3]="2008";
+news_links[4]="2007";
+news_links[5]="2006";
+
+23:32:18.756925 IP e2e-12-49.ssdcloudindia.net.http > anton.46496: Flags [.], seq 1369:2737, ack 141, win 59, options [nop,nop,TS val 4219835338 ecr 2294251148], length 1368: HTTP
+E.....@.5.....c1
+dl>.P..3p..K.-....;.......
+......~. header_links=new Array(11);
+header_links[0]="<a class=\"links\" href=\"http://www.shakthimaan.com/index.html\">/home</a>";
+header_links[1]="<a class=\"links\" href=\"http://www.shakthimaan.com/news.html\">/blog</a>";
+header_links[2]="<a class=\"links\" href=\"http://www.shakthimaan.com/downloads.html\">/downloads</a>";
+header_links[3]="<a class=\"links\" href=\"http://www.shakthimaan.com/work.html\">/work</a>";
+header_links[4]="<a class=\"links\" href=\"http://www.shakthimaan.com/acad.html\">/acad</a>";
+header_links[5]="<a class=\"links\" href=\"http://www.shakthimaan.com/resume.html\">/resume</a>";
+header_links[6]="<a class=\"links\" href=\"http://www.shakthimaan.com/installs/install.html\">/installs</a>";
+header_links[7]="<a class=\"links\" href=\"http://www.shakthimaan.com/links/documentation.html\">/links</a>";
+header_links[8]="<a class=\"links\" href=\"http://www.shakthimaan.com/misc/glv.html\">/misc</a>";
+header_links[9]="<a class=\"links\" href=\"https://gallery.shakthimaan.com\">/gallery</a>";
+header_links[10]="<a class=\"links\" href=\"http://www.shakthimaan.com/about.html\">/about</a>";
+
+/* links links */
+var links_links=new Array(9);
+links_links[0]="documentation";
+links_links[1]="embedded";
+links_links[2]="hardware";
+links_links[3]="kernel";
+links_links[4]="programming";
+links_links[5]="software";
+links_links[5]="tweets";
+links_links
+23:32:31.749473 IP anton.42596 > 10.1.101.150.ndl-aas: Flags [P.], seq 2908392681:2908392951, ack 1168788611, win 502, options [nop,nop,TS val 982420617 ecr 1581107385], length 270
+E..B..@.@...
+dl>
+.e..d.8.Z..E.L......m.....
+:...^=..CONNECT discuss.elastic.co:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: discuss.elastic.co:443
+Proxy-Authorization: Basic MTExOTAzMDgwOlNhaSZtb29kbGUyMQ==
+
+
+23:32:32.068851 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 1:94, ack 270, win 235, options [nop,nop,TS val 1581107465 ecr 982420617], length 93
+E....:@.>...
+.e.
+dl>.8.dE.L..Z.............
+^=.	:...HTTP/1.1 200 Connection Established
+Connection: Keep-Alive
+Proxy-Connection: Keep-Alive
+
+
+23:32:32.076467 IP anton.42596 > 10.1.101.150.ndl-aas: Flags [P.], seq 270:787, ack 94, win 502, options [nop,nop,TS val 982420944 ecr 1581107465], length 517
+E..9..@.@...
+dl>
+.e..d.8.Z..E.L......d.....
+:...^=.	...........w.1/...-o...[n.....
+X...v...^J.. .....v+X.g(.%.kD..x...V.Wu/..Wml.$.......+./.....,.0.
+.	........./.5.
+.............discuss.elastic.co..........
+.............................h2.http/1.1..........".
+...........3.k.i... U.m......
+....A ......\.<..i.^.*...A."..."....&2..@........1..v.2.-.	..._H}.....p&.]&...k.....][	..?..+....................................-........@....7........................................................).K.&. .k. ..n.S.J...K..bF.L.H.k.2...LS*..d.! .....C?../..l!r..>W-..H9..1y...y
+23:32:32.377916 IP 10.1.101.150.ndl-aas > anton.42596: Flags [.], seq 94:1542, ack 787, win 243, options [nop,nop,TS val 1581107542 ecr 982420944], length 1448
+E....<@.>...
+.e.
+dl>.8.dE.L..Z.............
+^=.V:.......z...v..kX.l.+[...$M.....`..Tt0..F..Y.g. .....v+X.g(.%.kD..x...V.Wu/..Wml......+.....3.$... '.\.^...FZL...^.O....c.3.QF..W=O..........$.jT..o..l.Ca..r.9...Y.....ZV.l.) .[...........9...`.</.68./.....0.;pI.zi..D...P......+.......27.G.8..._|..J.E..Kk.aaZ...T..w..JC...v..:......2.x.}%..b.......m.)-\&.K...Js.....H-B.!W?oo....y	.9.....C..iY....A..kl..!.7....k.h...Y..|,......hE.|..).F..<.F...>.c..:..t..e..1[..D..0AL..r...$E.F.'..(....}............%...p.K..u.	.....=..;t.2...P#.n.p`...?R.h%. 9..+..*.(s.T.......4^..0...C...*XQ...s..=.6.#.i7..r.7U->-.E.#.%...Y$..[.H>....!X.ho../.]..q.'...it.7..5Z.{......Jz.....rj.4J...o.E...P...@....0#..HR8!...f.*.X[u..~...p...,9......(.......5.j.m0$R.....<2X..p..)..
+...9..._..
+...1=..f.^.X.1.[okM5...)?.z.R_.<R2..J..k"j?..B..S........b.%..{IL..<n
+...s.PxM.A.f.T.@..T...SBHO<..{M....S.lB1......t.g..V..F.......8....7.=...MS.(...X8....{bCN.........]..H..y......	.....=_..a...E....;W[......h. .`...*K8....M.`o.....t.$.c.=..Gu./. 4.Q..4pZ<".	2....>..P....L...BlN..:T) ....g.%.O...%I.........abBi.I.159.._....d)M.....L?..Q.j.........u...O.......A..=z[.5....h	?.3.....!
+E...O...BQ..s=p.v%..
+3.^Z'&G.w..V...:f.U..>6a;.j*p.1.[...........<.+..bj`S;.|.....Gj.K..t.s)....W..Xk...9.....L\.%.E....K..t.=)..~...?..p.9.vn........#.L...`;...E......._.-G.u."?&.khw.(V....u..5.[.hM....s..}..T.*2..........eX.h..n.D........v....~.{)..t$....P^....{X.ty...x.Cw.p.SIIH?..a?..&z.FN...."......,
+"3'..b..6.r....9o....H.F....a..la......(
+23:32:32.379418 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 1542:4190, ack 787, win 243, options [nop,nop,TS val 1581107542 ecr 982420944], length 2648
+E.
+..=@.>...
+.e.
+dl>.8.dE.R..Z.............
+^=.V:...x....33bz...Mo_l[.~.......(.R.5....,.{\.-K.%...$......s..=....j....t.iV.
+...L...;.'......&..[j..J$.Z..QX.+..1.g.o....$~.n.........pg..ZhBPz.1.?....%
+q.^..T..?....=k`u.M)C.Dt....P/.5....;..r...-p...p..}..
+Ys..Q.....(..Vh.._ .h.....d..Q....+GR.........<D....=..=..v..@_....k.>.k....C.z>7^.M.ur2..:...,/5.+FV..\.`.L|.]..K...@C.#*tmA.=...F.f.q.j......U....2R.}....8..&...Hzl&..,.'....\G....9..v.....~..,.U%M..6.X0A.....9@..(.R`.R..P....|S.b...cE.'.JK..c/A
+.n.;Q?..7.{.....
+i.I.7a`..k/n...... =..5-.M..Z........1.r%4U.,.......e8..{sR.....f..
+...<U..i.##6.z..+...^*...r.-F
+e.X.CYM.0a.=\...H.E..`.....HB^...#&}...........ZLa.........o......^.$....i.Y.J..<...v")W'8.^W5Sd...=7.V~..V..R`+}.Va...5./..JP.E.Z.gT$...44...*.....s	=X..g..1.:kF.9...-.......1..."......5.U..Oh0..I9(...[..AEYh.c..9.2H'}.6..u.	.8..).....$p..i...........v}5.qN5....~...4?...do.dK..6....S..=....4"Z.VB..8W..;S0.d.[p...G..7.N._....o .L;.F.*:~......r...Q_......m.9.Z.......~.....P..a.".'...mt[..}rf...x..B...D..P.....?...\.y.p;.D-.,.......j.......R..eW.W.GN..9..A.re...B...L.4./..............g...t...2......59..%.&..A5.bzq<....!...9..m.x.....q.\..:.wVfE:..cPd..Z...?.....4.+..F.-".K8.. %....I.#2v.[Q.H............3....w0.I.U..W..b..9{....i..Z.....j..Z.d..;.l..!.....f4..<t=.A....TH...;(W.P.q.puH..qK\....1	D.~c............0b...x.,E.F.Ly|...4..r.!c'3..7./c#...1.);1........kM'...........cqP6......Z.&......).n|.J....=T.....m.@....K.j..g.g..=..Z!V 6a.A.... t.9.( X..#=...kH..;R..-u.z..q.W.^.......M4T;Fx...}......r.zh.4.=^.......fM..GUz.<&..#.p?.;.hL..Fd-M...N2.s.?#w.s,.bg.A*.....F..ftx3......L.C..E...._.Q.....	ur..@"tXJ...g3.n..;w...L....,E.p+8#.4..,\..c.......t..T..g...f.k..[9iK..I	#..8	.sU.....(q.R.....p.<<Hb+..S...qy...h...aR:.t..B~....}t.l.7...kk.E.._...:	.........*$..f.|.v..."	.R.1.r#e..^...E.OED.dm.Y/.:7.@.e.E.....B..,	./~M.,....\..8.|=.."...?..~.z.....V.6y..........5.~I.b....S.......\-oFt...	t..../..{...;..f..6]..;..6...L..+....7........r.H...ovR...3#8...e. +.....p....vy.pc;......T....O.
+V......y...J...*y..Y.H..H}A....\..i....W..Iu..q..`p.w..[`...G._@CW..n..8...mZ.Mb.....sr..	...[:3}.I..........B.
+$...I$M..%Q..|.{..g..~.m6a..W...Ci.:.O	.e..."..{..xQ#.=a....jy.V.z.,...w.S.gIN..x:.`xv.....S.....<+.....l1w.*%J.P.]........{.T...m.Z.....r.&.d(y.T........1V]..}.._-....l..\.Pb$.&..(s....6^.	...n.Ksi..1....}_.yE,..Tr..oV...ei..B.wE^.8..5........K...|VW.......+W{.6.........+i:...be....r.{i.6.....r..).F.....i.]7.]...,[....bsS......w....x......f..sD..W.N...RD.]..%.,.{...... .k...9!s.e..........`p........Z....#..Td.J.H....k....c..$..*R.8.....n.
+.h.V........`2..a....p.@-R.`..?=.i.Zt..:....c|NT#..8K.45....[..[5....k.[A.{`1..........:.Wv..P.MYe..............K..57....3Rb.`a
+23:32:32.379419 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 4190:4669, ack 787, win 243, options [nop,nop,TS val 1581107543 ecr 982420944], length 479
+E....?@.>..l
+.e.
+dl>.8.dE.\..Z.............
+^=.W:....#.......g.......9eq	]XD.];$*....V.1Rh..%@Wf.5Hv2zrI!.....
+.P.~%.t...#%..7..o...u.MM.m...?..a^..Db..}rH..LEI'.....p.O.......o.....%..........>_...34....H...Z._]Q...-......a.|....&B..-.....i.......9.A'.bi......Y.t.y..05leE..?M.m.t4....>..I....._9.f .'...|M.r.9.,......WK.......i.U(.>DuLBcvNVuyqT..,.n.,I,.9..<rJ.4o.N.X..^y..:L.b!...2.9.4........h...[..f......D.!r.=..s..@...u.O.9..*.}0.......S0.....H.-m.CAB.aBQ..4..!..}o.....5...[pw......(<
+4(....F..|..l........nc.s..'...7...9..
+23:32:32.388475 IP anton.42596 > 10.1.101.150.ndl-aas: Flags [P.], seq 787:851, ack 4669, win 501, options [nop,nop,TS val 982421256 ecr 1581107543], length 64
+E..t..@.@...
+dl>
+.e..d.8.Z..E.^............
+:...^=.W..........5A.._4.N.!a....HOF.J. ...I.?]+.g,.g....3......xM?..Uk.
+23:32:32.389420 IP anton.42596 > 10.1.101.150.ndl-aas: Flags [P.], seq 851:1021, ack 4669, win 501, options [nop,nop,TS val 982421257 ecr 1581107543], length 170
+E.....@.@...
+dl>
+.e..d.8.Z.<E.^......	.....
+:..	^=.W.........._..N.....b.0;.l..K.=X......s..._...|..F.99P..~..R....;...O....=...8."...,.w.....;LW.=9.w&........*.0z..|.H...?..XB9.*...Ob..axn1o.8	S.
+...rcmxC..W....W.D_....D8
+23:32:32.390124 IP anton.42596 > 10.1.101.150.ndl-aas: Flags [P.], seq 1021:2202, ack 4669, win 501, options [nop,nop,TS val 982421257 ecr 1581107543], length 1181
+E.....@.@..+
+dl>
+.e..d.8.Z..E.^............
+:..	^=.W....R..v.3..uZ... .\..i.BD}..]b?w ..{.$7....e........b.{.S..c..Ur....lL...'.	...J2..0.f90.9...O/.....Q?m.h..+..P>..	.....b`,.D-..:IA.k`.....g.P........p.3.6....l.L........1my... 8%.V..hDg\.)86....w....1k......#|..b2.W.d8H.U......L......%...'F...6.n..^.l..S+v..|..Y4fAw..Z!.....N..@...i...,...-.0.....Q^,8....t9..
+.[.@_..-..=.;.....<l.P..b....%..>.`_...=6..q......QQz.P.c.+	.....x...Z.<.I._.+g.Hz...C.q. \~.M..1n....."9.L.!.......*.#Qb.:.(i.z=.&s...pH..O..Y....x...E..X.....x.0........NI..0.B`..|j5H[|e....*Gv.....x.s=G1.....W.k...C...<.j....j........8.V#}.#..x4..yS.^..>C.^.....	..t.y.L.Ki?A......9..d...A.qF2...#.........jxS']..).p
+P.FV....j....F`.oJ......~#....<..MA..l.V.Xo.
+.lo..-.H..........lV....4..QE".5...$.R)>)......L.E..r.O. .N.....T..8...Tt.i=..V..1.V.-...%g..........Y......k..2v.	..0............:-...y..,..0.......y$........R1oJ...e*J.e4...c{....A..k.%..-......t...*..4._o..n...5..r.].........2+..'.6..>..(@|0...<Xn7u0#....+..............<D.%_..f...I..[.[T.+y.............L|.5.;M.#c.@.c0.'P.a>......D#......{K%.!..U....*...>zr..EJ...%.?:....TO..N..E.a...!.s{O.
+.(.JkV+..A..^.6........{..6......\5...V?...g[&......,..<.G'..(H
+W.......L.tX.;<...	...dP....7F....e.$....4S
+23:32:32.660487 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 4669:4873, ack 2202, win 274, options [nop,nop,TS val 1581107613 ecr 982421257], length 204
+E....C@.>..{
+.e.
+dl>.8.dE.^..Z......o......
+^=..:..	....J..<q~8."..<...............A.fu.....)6b.s:8$.&l..r...)F7."..S....,.............JqU['}}m..4....lE...I1....Z.....z...a.
+w.;n...oI.U..d....s.....i.zr....a..L....).gf....P...^....tFL.]..$z....k...{I......
+23:32:32.660966 IP anton.42596 > 10.1.101.150.ndl-aas: Flags [P.], seq 2202:2233, ack 4873, win 501, options [nop,nop,TS val 982421528 ecr 1581107613], length 31
+E..S..@.@...
+dl>
+.e..d.8.Z..E._......~.....
+:...^=.......J.....m.....(1.v.9..G.?qz.
+23:32:32.667366 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 4873:4921, ack 2233, win 274, options [nop,nop,TS val 1581107615 ecr 982421528], length 48
+E..d.E@.>...
+.e.
+dl>.8.dE._..Z.............
+^=..:.......+......l....A5h.*M..}.vg........D....-.e..kc
+23:32:32.686002 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 4921:5389, ack 2233, win 274, options [nop,nop,TS val 1581107616 ecr 982421528], length 468
+E....F@.>..p
+.e.
+dl>.8.dE._..Z.......6.....
+^=..:.........U1...)'.4.....fA..t.ee......3N....w}...R. g...E.`...J1<j.......5.$..b.....G......-.b...(......C..}L..Z..V..,k..#C..f.-].M..yw..D%..8.n.?..@~.H`....^b.C....7...l.t..-..{L.j21UOi............j.0.....W...*....C.......y.....;..7...R.. j.O@.;3....<......6......*`1...x.`...\...v.c.9./[x@|../..".T._*t.).O...K.I......E.k..#..1...y<h.......H...7..:d/.XB..cc!..'..l..k.n1...._.....^....L....+........[B....:.b..S.6|'..v5~.x.i.IAnIo..;l.Yx.'..f..Q...%@)k.4..O&.k..n...e.d?
+23:32:32.695286 IP 10.1.101.150.ndl-aas > anton.42596: Flags [P.], seq 4921:5389, ack 2233, win 274, options [nop,nop,TS val 1581107619 ecr 982421528], length 468
+E....G@.>..o
+.e.
+dl>.8.dE._..Z.......3.....
+^=..:.........U1...)'.4.....fA..t.ee......3N....w}...R. g...E.`...J1<j.......5.$..b.....G......-.b...(......C..}L..Z..V..,k..#C..f.-].M..yw..D%..8.n.?..@~.H`....^b.C....7...l.t..-..{L.j21UOi............j.0.....W...*....C.......y.....;..7...R.. j.O@.;3....<......6......*`1...x.`...\...v.c.9./[x@|../..".T._*t.).O...K.I......E.k..#..1...y<h.......H...7..:d/.XB..cc!..'..l..k.n1...._.....^....L....+........[B....:.b..S.6|'..v5~.x.i.IAnIo..;l.Yx.'..f..Q...%@)k.4..O&.k..n...e.d?

@@ -1,0 +1,38 @@
+See the below traceroute example.
+In the traceroutep.pcap file accompanies with this file, use the filters like the following with wireshark 
+
+icmp && ip.addr == 116.119.68.254
+
+root@moodle:~# traceroute www.redhat.com
+traceroute to www.redhat.com (104.69.147.104), 30 hops max, 60 byte packets
+ 1  210.212.183.61 (210.212.183.61)  0.634 ms  0.601 ms  0.529 ms
+ 2  172.24.208.34 (172.24.208.34)  1.997 ms  1.987 ms  1.971 ms
+ 3  * * *
+ 4  * * *
+ 5  59.144.105.41 (59.144.105.41)  4.594 ms  4.586 ms  7.077 ms
+ 6  116.119.68.254 (116.119.68.254)  68.871 ms 116.119.57.148 (116.119.57.148)  61.061 ms 116.119.42.11 (116.119.42.11)  58.793 ms
+ 7  ae11.equinix-sin.netarch.akamai.com (125.56.219.243)  111.529 ms  99.358 ms  99.344 ms
+ 8  * * *
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+

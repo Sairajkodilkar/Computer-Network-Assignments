@@ -1,0 +1,8 @@
+IDs of the both the msgs
+is this a response?
+which msg is this 1st or 2nd
+server should maintain a state for each client in dictionary
+
+
+packet
+16 bit ID, 8 bit response, 8bit msg seq no, 16 bit data size + data

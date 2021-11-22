@@ -1,0 +1,8 @@
+what is gateway exactly?
+for IP addresses:
+	192.168.10.0/24
+	192.168.10.1/16 machines are communicating
+
+What happens when routers are connected via switch
+what if dhcp is connected to router
+what if router has two different subnet

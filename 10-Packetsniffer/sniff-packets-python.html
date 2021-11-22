@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head itemscope="" itemtype="http://schema.org/WebSite">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.binarytides.com/blog/xmlrpc.php">
+
+        
+    <!--[if lt IE 9]>
+    <script src="https://www.binarytides.com/blog/wp-content/themes/shellviz/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link type="text/css" media="all" href="sniff-packets-python_files/autoptimize_119bae1ad3b4f7d63c18a3b0d1685f62.css" rel="stylesheet"><title>Code a network packet sniffer in python for Linux – BinaryTides</title>
+<link rel="dns-prefetch" href="https://www.binarytides.com/">
+
+
+
+
+
+
+
+<script type="text/javascript" async="" src="sniff-packets-python_files/analytics.js"></script><script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type="text/javascript" src="sniff-packets-python_files/jquery.js"></script>
+
+
+<link rel="https://api.w.org/" href="https://www.binarytides.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.binarytides.com/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.binarytides.com/blog/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Php : create pdf from html using mpdf" href="https://www.binarytides.com/create-pdf-from-html-using-mpdf-in-php/">
+<link rel="next" title="Packet Sniffer Code in C using Linux Sockets (BSD) – Part 2" href="https://www.binarytides.com/packet-sniffer-code-in-c-using-linux-sockets-bsd-part-2/">
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="canonical" href="https://www.binarytides.com/python-packet-sniffer-code-linux/">
+<link rel="shortlink" href="https://www.binarytides.com/?p=1018">
+<link rel="alternate" type="application/json+oembed" href="https://www.binarytides.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.binarytides.com%2Fpython-packet-sniffer-code-linux%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.binarytides.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.binarytides.com%2Fpython-packet-sniffer-code-linux%2F&amp;format=xml">
+
+<!-- Schema.org markup for Google+ --> 
+<meta itemprop="name" content="Code a network packet sniffer in python for Linux"> 
+<meta itemprop="description" content="Last Updated On : 15th December 2012 Related Post Code a simple telnet client using sockets in pytho... Python program to fetch domain whois data using so... Python socket – network programming tutorial">
+
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Code a network packet sniffer in python for Linux">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.binarytides.com/python-packet-sniffer-code-linux/">
+<meta property="og:description" content="Last Updated On : 15th December 2012 Related Post Code a simple telnet client using sockets in pytho... Python program to fetch domain whois data using so... Python socket – network programming tutorial">
+<meta property="og:site_name" content="BinaryTides">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@binarytides">
+<meta name="twitter:creator" content="@binarytides">
+<meta name="twitter:title" content="Code a network packet sniffer in python for Linux">
+<meta name="twitter:description" content="Last Updated On : 15th December 2012 Related Post Code a simple telnet client using sockets in pytho... Python program to fetch domain whois data using so... Python socket – network programming tutorial">
+<meta name="twitter:creator" content="@binarytides">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+	<meta name="google-site-verification" content="raSOdoQJjGURKn_sXYoe_n3Zqslc-LFFapomtBs69nY">
+
+
+
+<!-- Google Plus Publisher Markup -->
+<link href="https://plus.google.com/+binarytides" rel="publisher">
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="sniff-packets-python_files/js.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-270'+'2686-57');
+</script><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://www.binarytides.com/python-packet-sniffer-code-linux/"><meta property="og:type" content="article"><meta property="og:title" content="Code a network packet sniffer in python for Linux"><meta property="og:description" content="Basic Sniffer Sniffers are programs that can capture/sniff/detect network traffic packet by packet and analyse"><meta property="og:image" content=""><script type="text/javascript">
+	window._wp_rp_static_base_url = 'https://wprp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "https://www.binarytides.com/blog/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.6.4';
+	window._wp_rp_post_id = '1018';
+	window._wp_rp_num_rel_posts = '6';
+	window._wp_rp_thumbnails = true;
+	window._wp_rp_post_title = 'Code+a+network+packet+sniffer+in+python+for+Linux';
+	window._wp_rp_post_tags = ['python', 'socket+programming', 'linux', 'python', 'window', 'write', 'print', 'ubuntu', 'socket', 'traffic', 'python', 'code', 'librari', 'network', 'raw', 'program', 'linux', 'portabl', 'secur'];
+	window._wp_rp_promoted_content = true;
+</script>
+
+<link href="sniff-packets-python_files/css.css" rel="stylesheet" type="text/css">
+
+		
+		
+        <link href="sniff-packets-python_files/css_004.css" rel="stylesheet" type="text/css">
+    <link href="sniff-packets-python_files/css_005.css" rel="stylesheet">
+    
+    <link href="sniff-packets-python_files/css_002.css" rel="stylesheet">
+    
+        <link href="sniff-packets-python_files/css_003.css" rel="stylesheet">
+</head>
+
+<body data-rsssl="1" class="post-template-default single single-post postid-1018 single-format-standard oneline-header-mobile single-author js" itemscope="" itemtype="http://schema.org/WebPage" style="overflow-x: visible;">
+
+
+<div id="page" class="hfeed site-container">
+	
+		<div class="header-nav-wrap">
+        <div class="wrap">
+        <div class="box-wrap">
+            
+                        
+
+<header class="site-header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <div class="wrap">
+    <div class="box">
+        <div class="title">
+            <a class="site-title" href="https://www.binarytides.com/" title="BinaryTides" rel="home">
+                BinaryTides            </a>
+            
+            <a class="site-description">Coding, Software, Tech and Reviews</a>
+        </div>
+    </div>
+    </div>
+</header>
+            
+                        
+<nav id="site-navigation" class="nav-primary nav-menu dropdown-menu dropdown-handlers-setup" itemscope="" itemtype="http://schema.org/SiteNavigationElement" aria-label="Main Navigation">
+    
+    <!-- Mobile Burger -->
+    <a href="#menu" class="mobile-burger" id="burger-nav-primary">☰ <span class="burger-title">Menu</span></a>
+    
+    <div class="wrap">
+    <div class="box-wrap">
+        
+        <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+        <ul id="menu-top" class="menu"><li id="menu-item-8158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-8158"><a href="https://www.binarytides.com/">Home</a></li>
+<li id="menu-item-8159" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8159"><a href="https://www.binarytides.com/category/linux/">Linux</a>
+<ul class="sub-menu" style="">
+	<li id="menu-item-8350" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8350"><a href="https://www.binarytides.com/category/linux/linux-commands/">Linux Commands</a></li>
+	<li id="menu-item-8354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8354"><a href="https://www.binarytides.com/category/linux/server-2/">Server</a></li>
+	<li id="menu-item-8351" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8351"><a href="https://www.binarytides.com/category/linux/hardware/">Hardware</a></li>
+</ul>
+</li>
+<li id="menu-item-8161" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8161"><a href="https://www.binarytides.com/category/general/windows/">Windows</a></li>
+<li id="menu-item-8163" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8163"><a href="https://www.binarytides.com/category/tech/">Tech</a>
+<ul class="sub-menu" style="">
+	<li id="menu-item-8355" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8355"><a href="https://www.binarytides.com/category/tech/laptops/">Laptops</a></li>
+	<li id="menu-item-8349" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8349"><a href="https://www.binarytides.com/category/tech/printers/">Printers</a></li>
+	<li id="menu-item-8453" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8453"><a href="https://www.binarytides.com/category/tech/graphics-cards/">Graphics Cards</a></li>
+	<li id="menu-item-8485" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8485"><a href="https://www.binarytides.com/category/tech/headphones/">Headphones</a></li>
+	<li id="menu-item-8973" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8973"><a href="https://www.binarytides.com/category/tech/keyboards/">Keyboards</a></li>
+	<li id="menu-item-8977" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8977"><a href="https://www.binarytides.com/category/tech/tablets/">Tablets</a></li>
+	<li id="menu-item-8981" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8981"><a href="https://www.binarytides.com/category/tech/mouse/">Mouse</a></li>
+</ul>
+</li>
+<li id="menu-item-8160" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-8160"><a href="https://www.binarytides.com/category/programming/">Coding</a></li>
+<li id="menu-item-8352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8352"><a href="https://www.binarytides.com/category/linux/ubuntu-2/">Ubuntu</a></li>
+<li id="menu-item-8353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8353"><a href="https://www.binarytides.com/category/general/">General</a></li>
+</ul>    
+    </div>
+    </div>
+
+</nav>
+
+        
+        </div>
+        </div>
+	</div>
+	
+			
+	<div class="breadcrumb-wrap" itemprop="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+        <div class="wrap">
+        <div class="box-wrap">
+            <ul id="breadcrumbs" class="breadcrumbs"><li class="item-home"><a class="bread-link bread-home" href="https://www.binarytides.com/" title="Home">Home</a></li><li class="separator separator-home"> &gt; </li><li class="item-cat"><a href="https://www.binarytides.com/category/programming/">Coding</a></li><li class="separator"> &gt; </li><li class="item-cat"><a href="https://www.binarytides.com/category/programming/sockets/">Socket Programming</a></li><li class="separator"> &gt; </li><li class="item-cat"><a href="https://www.binarytides.com/category/programming/sockets/python-sockets-sockets/">Python</a></li><li class="separator"> &gt; </li><li class="item-current item-1018"><strong class="bread-current bread-1018" title="Code a network packet sniffer in python for Linux">Code a network packet sniffer in python for Linux</strong></li></ul>        </div>
+        </div>
+	</div>
+	
+		
+	    <div id="main" class="wrapper site-inner site">
+                <div class="wrap">
+        <div class="box-wrap"> 
+
+<main id="primary" class="site-content" itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+    <div class="content" id="content" role="main">
+        
+        <article id="post-1018" class="post-1018 post type-post status-publish format-standard hentry category-python-sockets-sockets tag-linux-2 tag-python tag-socket-programming">
+	
+		
+	<header class="entry-header">
+		<h1 class="entry-title">Code a network packet sniffer in python for Linux</h1>
+        
+                <div class="below-title-meta">
+		<div class="adt">
+		By        	<span class="author">
+                <a href="https://www.binarytides.com/author/admin/" title="Posts by Silver Moon" rel="author">Silver Moon</a>        	</span>
+        	<span class="meta-sep">|</span> 
+                December 15, 2012 
+        	</div>
+	
+        <div class="adt-comment">
+		<a class="link-comments" href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comments">
+            60 Comments		</a> 
+        </div>       
+     	</div><!-- below title meta end -->
+	
+	</header>
+	
+		<div class="entry-content">
+		<div id="post_start"></div>
+<h3>Basic Sniffer</h3>
+<pre class="adflexi"><div class="adcontent">
+<script async="" src="sniff-packets-python_files/adsbygoogle.js"></script>
+<!-- binarytides.com 336x280 post top -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5814774904969415" data-ad-slot="0700059493"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+</pre>
+
+
+
+<!-- Time : 3.4809112548828E-5, Pos : 50 -->
+<p>Sniffers are programs that can capture/sniff/detect network traffic 
+packet by packet and analyse them for various reasons. Commonly used in 
+the field of network security. Wireshark is a very common packet 
+sniffer/protocol analyzer. Packet sniffers can be written in python too.
+ In this article we are going to write a few very simple sniffers in 
+python for the linux platform. Linux because, although python is a 
+portable, the programs wont run or give similar results on windows for 
+example. This is due to difference in the implementation of the socket 
+api.</p>
+<p>Sniffers shown here dont use any extra libraries like libpcap. They just use raw sockets. So lets start coding them</p>
+<p>The most basic form of a sniffer would be</p>
+<pre class="source-code">#Packet sniffer in python
+#For Linux
+
+import socket
+
+#create an INET, raw socket
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+
+# receive a packet
+while True:
+  print s.recvfrom(65565)</pre>
+<p>Run this with root privileges or sudo on ubuntu :</p>
+<pre class="highlight  ">$ sudo python sniffer.py</pre>
+<p>The above sniffer works on the principle that a raw socket is capable
+ of receiving all (of its type , like AF_INET) incoming traffic in 
+Linux.</p>
+<p>The output could look like this :</p>
+<pre class="terminal">$ sudo python raw_socket.py 
+("E \x00x\xcc\xfc\x00\x000\x06j%J}G\x13\xc0\xa8\x01\x06\x01\xbb\xa3\xdc\x0b\xbeI\xbf\x1aF[\x83P\x18\xff\xff\x88\xf6\x00\x00\x17\x03\x01\x00\x1c\xbbT\xb3\x07}\xb0\xedqE\x1e\xe7;-\x03\x9bU\xb7\xb1r\xd2\x9e]\xa1\xb8\xac\xa4V\x9a\x17\x03\x01\x00*\xed\x1f\xda\xa4##Qe\x9a\xe9\xd6\xadN\xf4\x9b\xc4\xf0C'\x01\xc4\x82\xdb\xb2\x8d(\xa5\xd0\x06\x95\x13WO\x0f\x8e\x1c\xa6f\x1d\xdf\xe1x", ('74.125.71.19', 0))
+('E \x00I\xcc\xfd\x00\x000\x06jSJ}G\x13\xc0\xa8\x01\x06\x01\xbb\xa3\xdc\x0b\xbeJ\x0f\x1aF[\x83P\x18\xff\xff:\x11\x00\x00\x17\x03\x01\x00\x1c\xaa];\t\x81yi\xbbC\xb5\x11\x14(Ct\x13\x10wt\xe0\xbam\xa9\x88/\xf8O{', ('74.125.71.19', 0))
+('E \x00(\xcc\xfe\x00\x000\x06jsJ}G\x13\xc0\xa8\x01\x06\x01\xbb\xa3\xdc\x0b\xbeJ0\x1aFa\x19P\x10\xff\xff\xe5\xb0\x00\x00', ('74.125.71.19', 0))
+('E \x00(\xcc\xff\x00\x000\x06jrJ}G\x13\xc0\xa8\x01\x06\x01\xbb\xa3\xdc\x0b\xbeJ0\x1aFbtP\x10\xff\xff\xe4U\x00\x00', ('74.125.71.19', 0))</pre>
+<p>The above is a dump of the network packets in hex. They can be parsed using the unpack function.</p>
+<h3>Parsing the sniffed packet</h3>
+<p>Here is the code sniff and parse a TCP packet</p>
+<pre class="source-code">#Packet sniffer in python for Linux
+#Sniffs only incoming TCP packet
+
+import socket, sys
+from struct import *
+
+#create an INET, STREAMing socket
+try:
+	s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+except socket.error , msg:
+	print 'Socket could not be created. Error Code : ' + str(msg[0]) + ' Message ' + msg[1]
+	sys.exit()
+
+# receive a packet
+while True:
+	packet = s.recvfrom(65565)
+	
+	#packet string from tuple
+	packet = packet[0]
+	
+	#take first 20 characters for the ip header
+	ip_header = packet[0:20]
+	
+	#now unpack them :)
+	iph = unpack('!BBHHHBBH4s4s' , ip_header)
+	
+	version_ihl = iph[0]
+	version = version_ihl &amp;gt;&amp;gt; 4
+	ihl = version_ihl &amp;amp; 0xF
+	
+	iph_length = ihl * 4
+	
+	ttl = iph[5]
+	protocol = iph[6]
+	s_addr = socket.inet_ntoa(iph[8]);
+	d_addr = socket.inet_ntoa(iph[9]);
+	
+	print 'Version : ' + str(version) + ' IP Header Length : ' + str(ihl) + ' TTL : ' + str(ttl) + ' Protocol : ' + str(protocol) + ' Source Address : ' + str(s_addr) + ' Destination Address : ' + str(d_addr)
+	
+	tcp_header = packet[iph_length:iph_length+20]
+	
+	#now unpack them :)
+	tcph = unpack('!HHLLBBHHH' , tcp_header)
+	
+	source_port = tcph[0]
+	dest_port = tcph[1]
+	sequence = tcph[2]
+	acknowledgement = tcph[3]
+	doff_reserved = tcph[4]
+	tcph_length = doff_reserved &amp;gt;&amp;gt; 4
+	
+	print 'Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port) + ' Sequence Number : ' + str(sequence) + ' Acknowledgement : ' + str(acknowledgement) + ' TCP header length : ' + str(tcph_length)
+	
+	h_size = iph_length + tcph_length * 4
+	data_size = len(packet) - h_size
+	
+	#get data from the packet
+	data = packet[h_size:]
+	
+	print 'Data : ' + data
+	print</pre><pre class="adwrap" style="border:1px solid #ddd; text-align:center; background:#fafafa; white-space:normal; height:90px;"><script async="" src="sniff-packets-python_files/adsbygoogle.js"></script>
+<!-- binarytides.com post middle horizontal -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5814774904969415" data-ad-slot="7125586293"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</pre>
+
+<!-- Time : 0.023344993591309 -->
+<p>The above code breaks down the packet into IP Header + TCP Header + Data.<br>
+The unpack function is used to break down the packet. <a href="https://docs.python.org/library/struct.html#format-characters">Documentation</a></p>
+<p>The output of the code should look like this :</p>
+<pre class="terminal">$ sudo python tcp_sniffer.py 
+Version : 4 IP Header Length : 5 TTL : 56 Protocol : 6 Source Address : 74.125.236.85 Destination Address : 192.168.1.101
+Source Port : 443 Dest Port : 38461 Sequence Number : 2809673723 Acknowledgement : 3312567259 TCP header length : 5
+Data : 2X???@???0? 
+                   ???k?/&amp;???=?5Hz??&gt;5QBp0?O???Z???$??
+
+Version : 4 IP Header Length : 5 TTL : 56 Protocol : 6 Source Address : 74.125.236.85 Destination Address : 192.168.1.101
+Source Port : 443 Dest Port : 38461 Sequence Number : 2809673778 Acknowledgement : 3312567259 TCP header length : 5
+Data : ?
+??j?!I??*??*??Z???;?L?]Y-
+
+Version : 4 IP Header Length : 5 TTL : 52 Protocol : 6 Source Address : 173.192.42.183 Destination Address : 192.168.1.101
+Source Port : 80 Dest Port : 52813 Sequence Number : 1202422309 Acknowledgement : 3492657980 TCP header length : 5
+Data : HTTP/1.1 502 Bad Gateway
+Server: nginx
+Date: Tue, 11 Sep 2012 08:56:00 GMT
+Content-Type: text/html
+Content-Length: 568
+Connection: close
+
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;502 Bad Gateway&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+&lt;center&gt;&lt;h1&gt;502 Bad Gateway&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!-- a padding to disable MSIE and Chrome friendly error page --&gt;
+&lt;!-- a padding to disable MSIE and Chrome friendly error page --&gt;
+&lt;!-- a padding to disable MSIE and Chrome friendly error page --&gt;
+&lt;!-- a padding to disable MSIE and Chrome friendly error page --&gt;
+&lt;!-- a padding to disable MSIE and Chrome friendly error page --&gt;
+&lt;!-- a padding to disable MSIE and Chrome friendly error page --&gt;
+
+
+Version : 4 IP Header Length : 5 TTL : 56 Protocol : 6 Source Address : 74.125.236.85 Destination Address : 192.168.1.101
+Source Port : 443 Dest Port : 38461 Sequence Number : 2809673811 Acknowledgement : 3312568679 TCP header length : 5
+Data :</pre>
+<p>According to RFC 791 an IP header looks like this :</p>
+<pre class="source-code">0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|Version|  IHL  |Type of Service|          Total Length         |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|         Identification        |Flags|      Fragment Offset    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  Time to Live |    Protocol   |         Header Checksum       |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                       Source Address                          |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Destination Address                        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Options                    |    Padding    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
+<p>If the IHL is 5 then total size is 20 bytes hence options+padding is absent.<br>
+For TCP packets the protocol is 6. Source address is the source IPv4 address in long format.</p>
+<p>Next comes the TCP header :</p>
+<pre class="source-code">0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|          Source Port          |       Destination Port        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                        Sequence Number                        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Acknowledgment Number                      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  Data |           |U|A|P|R|S|F|                               |
+| Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+|       |           |G|K|H|T|N|N|                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|           Checksum            |         Urgent Pointer        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Options                    |    Padding    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                             data                              |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
+<p>and the balance after the TCP header is the data portion.</p>
+<p>The C version of the code is <a href="https://www.binarytides.com/blog/packet-sniffer-code-in-c-using-linux-sockets-bsd/">here</a>.<br>
+The Php version of the code is <a href="https://www.binarytides.com/blog/code-a-packet-sniffer-in-php/">here</a>.</p>
+<h3>Note : </h3>
+<p>1. The above sniffer picks up only TCP packets, because of the declaration :</p>
+<div class="highlight">
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+</div>
+<p>For UDP and ICMP the declaration has to be :</p>
+<div class="highlight">
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_UDP)<br>
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_ICMP)
+</div>
+<p>You might be tempted to think of doing :</p>
+<div class="highlight">
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
+</div>
+<p>but this will not work , since IPPROTO_IP is a dummy protocol not a real one.</p>
+<p>2. This sniffer picks up only incoming packets.</p>
+<p>3. This sniffer delivers only IP frames , which means ethernet headers are not available.</p>
+<h3>Sniff all data with ethernet header</h3>
+<p>Now let us see how we can overcome the above mentioned drawbacks. The solutions is quite simple.</p>
+<p>This line :</p>
+<pre class="highlight  ">s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)</pre>
+<p>needs to be changed to :</p>
+<pre class="highlight  ">s = socket.socket( socket.AF_PACKET , socket.SOCK_RAW , socket.ntohs(0x0003))</pre>
+<p>Now the same socket will receive :</p>
+<p>1. All incoming and outgoing traffic.</p>
+<p>2. All Ethernet frames , which means all kinds of IP packets(TCP , 
+UDP , ICMP) and even other kinds of packets(like ARP) if there are any.</p>
+<p>3. It will also provide the ethernet header as a part of the received packet.</p>
+<p>Here is the source code :</p>
+<pre class="source-code">#Packet sniffer in python
+#For Linux - Sniffs all incoming and outgoing packets :)
+#Silver Moon (m00n.silv3r@gmail.com)
+
+import socket, sys
+from struct import *
+
+#Convert a string of 6 characters of ethernet address into a dash separated hex string
+def eth_addr (a) :
+  b = &amp;quot;%.2x:%.2x:%.2x:%.2x:%.2x:%.2x&amp;quot; % (ord(a[0]) , ord(a[1]) , ord(a[2]), ord(a[3]), ord(a[4]) , ord(a[5]))
+  return b
+
+#create a AF_PACKET type raw socket (thats basically packet level)
+#define ETH_P_ALL    0x0003          /* Every packet (be careful!!!) */
+try:
+	s = socket.socket( socket.AF_PACKET , socket.SOCK_RAW , socket.ntohs(0x0003))
+except socket.error , msg:
+	print 'Socket could not be created. Error Code : ' + str(msg[0]) + ' Message ' + msg[1]
+	sys.exit()
+
+# receive a packet
+while True:
+	packet = s.recvfrom(65565)
+	
+	#packet string from tuple
+	packet = packet[0]
+	
+	#parse ethernet header
+	eth_length = 14
+	
+	eth_header = packet[:eth_length]
+	eth = unpack('!6s6sH' , eth_header)
+	eth_protocol = socket.ntohs(eth[2])
+	print 'Destination MAC : ' + eth_addr(packet[0:6]) + ' Source MAC : ' + eth_addr(packet[6:12]) + ' Protocol : ' + str(eth_protocol)
+
+	#Parse IP packets, IP Protocol number = 8
+	if eth_protocol == 8 :
+		#Parse IP header
+		#take first 20 characters for the ip header
+		ip_header = packet[eth_length:20+eth_length]
+		
+		#now unpack them :)
+		iph = unpack('!BBHHHBBH4s4s' , ip_header)
+
+		version_ihl = iph[0]
+		version = version_ihl &amp;gt;&amp;gt; 4
+		ihl = version_ihl &amp;amp; 0xF
+
+		iph_length = ihl * 4
+
+		ttl = iph[5]
+		protocol = iph[6]
+		s_addr = socket.inet_ntoa(iph[8]);
+		d_addr = socket.inet_ntoa(iph[9]);
+
+		print 'Version : ' + str(version) + ' IP Header Length : ' + str(ihl) + ' TTL : ' + str(ttl) + ' Protocol : ' + str(protocol) + ' Source Address : ' + str(s_addr) + ' Destination Address : ' + str(d_addr)
+
+		#TCP protocol
+		if protocol == 6 :
+			t = iph_length + eth_length
+			tcp_header = packet[t:t+20]
+
+			#now unpack them :)
+			tcph = unpack('!HHLLBBHHH' , tcp_header)
+			
+			source_port = tcph[0]
+			dest_port = tcph[1]
+			sequence = tcph[2]
+			acknowledgement = tcph[3]
+			doff_reserved = tcph[4]
+			tcph_length = doff_reserved &amp;gt;&amp;gt; 4
+			
+			print 'Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port) + ' Sequence Number : ' + str(sequence) + ' Acknowledgement : ' + str(acknowledgement) + ' TCP header length : ' + str(tcph_length)
+			
+			h_size = eth_length + iph_length + tcph_length * 4
+			data_size = len(packet) - h_size
+			
+			#get data from the packet
+			data = packet[h_size:]
+			
+			print 'Data : ' + data
+
+		#ICMP Packets
+		elif protocol == 1 :
+			u = iph_length + eth_length
+			icmph_length = 4
+			icmp_header = packet[u:u+4]
+
+			#now unpack them :)
+			icmph = unpack('!BBH' , icmp_header)
+			
+			icmp_type = icmph[0]
+			code = icmph[1]
+			checksum = icmph[2]
+			
+			print 'Type : ' + str(icmp_type) + ' Code : ' + str(code) + ' Checksum : ' + str(checksum)
+			
+			h_size = eth_length + iph_length + icmph_length
+			data_size = len(packet) - h_size
+			
+			#get data from the packet
+			data = packet[h_size:]
+			
+			print 'Data : ' + data
+
+		#UDP packets
+		elif protocol == 17 :
+			u = iph_length + eth_length
+			udph_length = 8
+			udp_header = packet[u:u+8]
+
+			#now unpack them :)
+			udph = unpack('!HHHH' , udp_header)
+			
+			source_port = udph[0]
+			dest_port = udph[1]
+			length = udph[2]
+			checksum = udph[3]
+			
+			print 'Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port) + ' Length : ' + str(length) + ' Checksum : ' + str(checksum)
+			
+			h_size = eth_length + iph_length + udph_length
+			data_size = len(packet) - h_size
+			
+			#get data from the packet
+			data = packet[h_size:]
+			
+			print 'Data : ' + data
+
+		#some other IP packet like IGMP
+		else :
+			print 'Protocol other than TCP/UDP/ICMP'
+			
+		print</pre>
+<p>The above program must be run with root privileges.</p>
+<p>The output should be something like this :</p>
+<pre class="terminal">Destination MAC : 00-1c-c0-f8-79-ee Source MAC : 00-25-5e-1a-3d-f1 Protocol : 8
+Version : 4 IP Header Length : 5 TTL : 57 Protocol : 6 Source Address : 64.131.72.23 Destination Address : 192.168.1.6
+Source Port : 80 Dest Port : 58928 Sequence Number : 1392138007 Acknowledgement : 2935013912 TCP header length : 6
+Data : ??y?%^?=E ,@9?c@?H?P?0R?W????`?5t?
+
+Destination MAC : 00-25-5e-1a-3d-f1 Source MAC : 00-1c-c0-f8-79-ee Protocol : 8
+Version : 4 IP Header Length : 5 TTL : 64 Protocol : 6 Source Address : 192.168.1.6 Destination Address : 64.131.72.23
+Source Port : 58928 Dest Port : 80 Sequence Number : 2935013912 Acknowledgement : 1392138008 TCP header length : 5
+Data : %^?=???yE(mU@@?2?@?H?0P????R?W?PJc
+
+Destination MAC : 00-1c-c0-f8-79-ee Source MAC : 00-25-5e-1a-3d-f1 Protocol : 8
+Version : 4 IP Header Length : 5 TTL : 55 Protocol : 17 Source Address : 78.141.179.8 Destination Address : 192.168.1.6
+Source Port : 34049 Dest Port : 56295 Length : 28 Checksum : 25749
+Data : @7?YN?????d??????r'?y@?f?h`??
+
+Destination MAC : 00-1c-c0-f8-79-ee Source MAC : 00-25-5e-1a-3d-f1 Protocol : 8
+Version : 4 IP Header Length : 5 TTL : 118 Protocol : 17 Source Address : 173.181.21.51 Destination Address : 192.168.1.6
+Source Port : 5999 Dest Port : 56295 Length : 26 Checksum : 22170
+Data : s)vL??3?o???V?Z???cw?k??pIQ</pre>
+<p>It parses the Ethernet header and also the UDP and ICMP headers.</p>
+<p>Ethernet header looks like this :</p>
+<pre class="pre_text">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       Ethernet destination address (first 32 bits)            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| Ethernet dest (last 16 bits)  |Ethernet source (first 16 bits)|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       Ethernet source address (last 32 bits)                  |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|        Type code              |                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
+<p>UDP Header according to RFC 768 :</p>
+<pre class="pre_text">0      7 8     15 16    23 24    31  
+ +--------+--------+--------+--------+ 
+ |     Source      |   Destination   | 
+ |      Port       |      Port       | 
+ +--------+--------+--------+--------+ 
+ |                 |                 | 
+ |     Length      |    Checksum     | 
+ +--------+--------+--------+--------+ 
+ |                                     
+ |          data octets ...            
+ +---------------- ...</pre>
+<p>ICMP Header according to RFC 792 :</p>
+<pre class="pre_text">0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                             unused                            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|      Internet Header + 64 bits of Original Data Datagram      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
+<p>This kind of a sniffer does not depend on any external libraries like libpcap.</p>
+<p>The C version of this code is <a href="https://www.binarytides.com/blog/packet-sniffer-code-in-c-using-linux-sockets-bsd-part-2/">here</a>.</p>
+<h3>Resources</h3>
+<p>1. <a href="https://docs.python.org/library/socket.html">http://docs.python.org/library/socket.html</a></p>
+<div class="updated_on">Last Updated On : 15th December 2012</div>
+<div id="dpsp-content-bottom" class="dpsp-content-wrapper dpsp-shape-rectangular dpsp-column-auto dpsp-has-spacing dpsp-hide-on-mobile dpsp-button-style-1 dpsp-has-icon-background dpsp-has-button-background"><ul class="dpsp-networks-btns-wrapper dpsp-networks-btns-content "><li><a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.binarytides.com%2Fpython-packet-sniffer-code-linux%2F&amp;t=Code%20a%20network%20packet%20sniffer%20in%20python%20for%20Linux" class="dpsp-network-btn dpsp-facebook dpsp-first"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">Facebook</span></span></a></li><li><a rel="nofollow" href="https://twitter.com/intent/tweet?text=Code%20a%20network%20packet%20sniffer%20in%20python%20for%20Linux&amp;url=https%3A%2F%2Fwww.binarytides.com%2Fpython-packet-sniffer-code-linux%2F" class="dpsp-network-btn dpsp-twitter"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">Twitter</span></span></a></li><li><a rel="nofollow" href="#" class="dpsp-network-btn dpsp-pinterest dpsp-last"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">Pinterest</span></span></a></li></ul></div><!-- Begin Yuzo --><div class="yuzo_related_post style-1" data-version="5.12.88"><!-- with result --><div class="yuzo_clearfixed yuzo__title"><h3>Related Post</h3></div><div class="yuzo_wraps">
+						  <div class="relatedthumb relatedpost-3166" style="width: 207px; float: left; overflow: hidden; height: 202px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="https://www.binarytides.com/python-program-to-fetch-domain-whois-data-using-sockets/">
+									  <div class="yuzo-img-wrap ">
+										
+										<div class="yuzo-img" style="background:url('https://www.binarytides.com/blog/wp-content/plugins/yuzo-related-post/assets/images/default.png') 50% 50% no-repeat;width: 207px;;max-width:100%;height:144px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;">Python program to fetch domain whois data using so...</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-2919" style="width: 207px; float: left; overflow: hidden; height: 202px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="https://www.binarytides.com/code-a-packet-sniffer-in-python-with-pcapy-extension/">
+									  <div class="yuzo-img-wrap ">
+										
+										<div class="yuzo-img" style="background:url('https://www.binarytides.com/blog/wp-content/plugins/yuzo-related-post/assets/images/default.png') 50% 50% no-repeat;width: 207px;;max-width:100%;height:144px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;">Code a packet sniffer in python with pcapy extensi...</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-4628" style="width: 207px; float: left; overflow: hidden; height: 202px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="https://www.binarytides.com/code-telnet-client-sockets-python/">
+									  <div class="yuzo-img-wrap ">
+										
+										<div class="yuzo-img" style="background:url('https://www.binarytides.com/blog/wp-content/uploads/2013/03/python-logo-150x150.png') 50% 50% no-repeat;width: 207px;;max-width:100%;height:144px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:14px;">Code a simple telnet client using sockets in pytho...</span>
+							  
+							  
+							  </a>
+
+						  </span></div></div> <!-- end wrap -->
+</div> <script>
+						  jQuery(document).ready(function( $ ){
+							jQuery('.yuzo_related_post .yuzo_wraps').equalizer({ columns : '> div' });
+						   });
+						  </script> <!-- End Yuzo :) -->			</div>
+	<!-- .entry-content -->
+    
+        <footer class="entry-meta">
+		
+		<span class="entry-categories">Category: <a href="https://www.binarytides.com/category/programming/sockets/python-sockets-sockets/" rel="category tag">Python</a></span>
+		<span class="entry-tags">Tags:  <a href="https://www.binarytides.com/tag/linux-2/" rel="tag">linux</a>, <a href="https://www.binarytides.com/tag/python/" rel="tag">python</a>, <a href="https://www.binarytides.com/tag/socket-programming/" rel="tag">socket programming</a></span> 
+        
+        <span>
+                    </span>
+		
+
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+        
+                <nav class="nav-single">
+            <div class="assistive-text">Post navigation</div>
+
+            <span class="nav-previous"><a href="https://www.binarytides.com/create-pdf-from-html-using-mpdf-in-php/" rel="prev">Php : create pdf from html using mpdf</a></span>
+            <span class="nav-next"><a href="https://www.binarytides.com/packet-sniffer-code-in-c-using-linux-sockets-bsd-part-2/" rel="next">Packet Sniffer Code in C using Linux Sockets (BSD) – Part 2</a></span>
+        </nav>
+        <!-- .nav-single -->
+        
+        
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			60 thoughts on “<span>Code a network packet sniffer in python for Linux</span>”		</h2>
+        
+        <!-- commentlist -->
+		<ol class="commentlist">
+				
+	<li class="comment even thread-even depth-1" id="li-comment-157964">
+		
+		<article id="comment-157964" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/3c5efc7cfe5ef8e05bd2f756df40afa3.jpeg" srcset="https://secure.gravatar.com/avatar/3c5efc7cfe5ef8e05bd2f756df40afa3?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Srini </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-157964"><time datetime="2018-05-07T11:15:36+05:30">May 7, 2018 at 11:11 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi,</p>
+<p>Thanks for the detailed explanation. </p>
+<p>Will this script able to capture only ipv4 packets or it will sniff both ipv4 and ipv6?</p>
+<p>Thanks in advance</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=157964#respond" data-commentid="157964" data-postid="1018" data-belowelement="comment-157964" data-respondelement="respond" aria-label="Reply to Srini">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-156225">
+		
+		<article id="comment-156225" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/d8358553da9c4e4ef8534d17603d741f.jpeg" srcset="https://secure.gravatar.com/avatar/d8358553da9c4e4ef8534d17603d741f?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Arnie </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-156225"><time datetime="2018-03-13T06:18:25+05:30">March 13, 2018 at 6:06 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Payload I am getting as below: How to unpack the payload ? </p>
+<p>Data : E �4�@ ��i��i���H�9�’/w���Y�<br>
+�%�J��X���\�?��W������’=L�$�@u�{�=�]ȇa��”�2E��Ŝ��XM��C��pe<br>
+��ף�JJ�f�	q�p�7XQk^�/��J7�.¥�l<br>
+HG��I$x�5:�{�h���)�L�_’Z�w�q�����v���&amp;�Ñ�\��-���Ɠ��i��-|”k���_0�	
+�bS��4=/h�е�������h�F!5��C)���V�\̘Ã�\^7�Үۥ&amp;k���W�-p�%�<br>
+���]E��W8��hL&gt;�	���쪻Nz�nPBg8!Mj��k4</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=156225#respond" data-commentid="156225" data-postid="1018" data-belowelement="comment-156225" data-respondelement="respond" aria-label="Reply to Arnie">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment even depth-2" id="li-comment-169221">
+		
+		<article id="comment-169221" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/61b72080d056099a5b0d2406b729fb1b.jpeg" srcset="https://secure.gravatar.com/avatar/61b72080d056099a5b0d2406b729fb1b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Anonymoys </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-169221"><time datetime="2018-10-25T18:35:00+05:30">October 25, 2018 at 6:06 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>you are using<br>
+etc.recv(65565)</p>
+<p>use recvfrom</p>
+<p>etc.recvfrom(65565)</p>
+<p>cheers!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=169221#respond" data-commentid="169221" data-postid="1018" data-belowelement="comment-169221" data-respondelement="respond" aria-label="Reply to Anonymoys">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-151004">
+		
+		<article id="comment-151004" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/c0cdcc06665e66c4f75009b655c41ebc.jpeg" srcset="https://secure.gravatar.com/avatar/c0cdcc06665e66c4f75009b655c41ebc?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Larry </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-151004"><time datetime="2018-01-11T00:46:32+05:30">January 11, 2018 at 12:12 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Should s.recvfrom only ever return a single packet?</p>
+<p>I’m creating a raw socket using socket.socket(socket.AF_PACKET, 
+socket.SOCK_RAW, socket.ntohs(0x0003)).  I’m reading the socket with 
+s.recvfrom(65536) but since this should be layer 2, I don’t ever expect 
+more than 9k read (max jumbo frame) right?  Is it possible I’m getting 
+two packets in one request?  Should this always return 1 packet only, 
+and if so how can it ever be larger than a 9k jumbo frame?  MTU on the 
+interface is set to 9001</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=151004#respond" data-commentid="151004" data-postid="1018" data-belowelement="comment-151004" data-respondelement="respond" aria-label="Reply to Larry">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-136506">
+		
+		<article id="comment-136506" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/0379936e48aa7cbc8bd3979aee695abd.jpeg" srcset="https://secure.gravatar.com/avatar/0379936e48aa7cbc8bd3979aee695abd?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Karim </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-136506"><time datetime="2017-10-22T03:47:10+05:30">October 22, 2017 at 3:03 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi sir … I’m a beginner on python … I can’t understand this part!!<br>
+version_ihl = iph[0]<br>
+  version = version_ihl &gt;&gt; 4<br>
+  ihl = version_ihl &amp; 0xF</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=136506#respond" data-commentid="136506" data-postid="1018" data-belowelement="comment-136506" data-respondelement="respond" aria-label="Reply to Karim">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment odd alt depth-2" id="li-comment-197552">
+		
+		<article id="comment-197552" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/67d1aa5830ace4e9af723bcfef5c4a83.jpeg" srcset="https://secure.gravatar.com/avatar/67d1aa5830ace4e9af723bcfef5c4a83?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Meltus </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-197552"><time datetime="2019-05-22T04:59:26+05:30">May 22, 2019 at 4:04 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>The unpack() function makes sure iph[0] got the first byte of the
+ packet. Looking back in the diagram, you could see that the first byte 
+(8 bit) consists of the first 4 bit which is the version of the ip 
+protocol, and the latter 4 bit which is the internet header length.</p>
+<p>By &gt;&gt; or right-shifting the value by 4, it means that you push 
+all the bits in the variable to the right by 4, in order to get the 
+first 4 bit, which is the version section.<br>
+Also, if you AND or &amp; the value by 0xF which in binary means 
+00001111, you get the last 4 bit, which is the internet header length.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=197552#respond" data-commentid="197552" data-postid="1018" data-belowelement="comment-197552" data-respondelement="respond" aria-label="Reply to Meltus">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-131609">
+		
+		<article id="comment-131609" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/c0cdcc06665e66c4f75009b655c41ebc.jpeg" srcset="https://secure.gravatar.com/avatar/c0cdcc06665e66c4f75009b655c41ebc?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Larry </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-131609"><time datetime="2017-09-22T00:38:36+05:30">September 22, 2017 at 12:12 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Is there a way I can sniff a specific interface and/or port #?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=131609#respond" data-commentid="131609" data-postid="1018" data-belowelement="comment-131609" data-respondelement="respond" aria-label="Reply to Larry">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-129555">
+		
+		<article id="comment-129555" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/ee2d99cdff628962fb73cb9353fbf64a.jpeg" srcset="https://secure.gravatar.com/avatar/ee2d99cdff628962fb73cb9353fbf64a?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">abolfazl </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-129555"><time datetime="2017-09-07T13:37:45+05:30">September 7, 2017 at 1:01 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>hello mr </p>
+<p>thank you for education </p>
+<p>may you record a video for struct modules and you use from example for more our know</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=129555#respond" data-commentid="129555" data-postid="1018" data-belowelement="comment-129555" data-respondelement="respond" aria-label="Reply to abolfazl">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-123596">
+		
+		<article id="comment-123596" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/b483fbce78b27c7962ba3c8be3854f15.jpeg" srcset="https://secure.gravatar.com/avatar/b483fbce78b27c7962ba3c8be3854f15?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Eugene </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-123596"><time datetime="2017-07-12T11:44:00+05:30">July 12, 2017 at 11:11 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks, man!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=123596#respond" data-commentid="123596" data-postid="1018" data-belowelement="comment-123596" data-respondelement="respond" aria-label="Reply to Eugene">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-116404">
+		
+		<article id="comment-116404" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/cf7637e2233a6c2e97a72d764f869b8c.jpeg" srcset="https://secure.gravatar.com/avatar/cf7637e2233a6c2e97a72d764f869b8c?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Bonio </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-116404"><time datetime="2017-04-30T21:04:05+05:30">April 30, 2017 at 9:09 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I want to Trace only outgoing packets and I have no idea how to 
+sort them out. I want to save them to text file as well, “on the fly” or
+ after I break compiling. Can anyone help?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=116404#respond" data-commentid="116404" data-postid="1018" data-belowelement="comment-116404" data-respondelement="respond" aria-label="Reply to Bonio">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-110677">
+		
+		<article id="comment-110677" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5bb25855551c21cce2461f5382d5db5f.jpeg" srcset="https://secure.gravatar.com/avatar/5bb25855551c21cce2461f5382d5db5f?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">dega </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-110677"><time datetime="2017-03-16T23:22:27+05:30">March 16, 2017 at 11:11 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for your code SilverMoon.<br>
+I have a fix to propose:<br>
+In the second example (‘Sniff all data with ethernet header’):<br>
+– The Ethernet type is unpacked in line 32. Since it’s BigEndian in the packet, unpack does the appropriate job.<br>
+– Line 33 is superfluous.<br>
+– In lines 36 and 37, the constant should be 0x800 (<a href="https://en.wikipedia.org/wiki/EtherType" rel="nofollow">https://en.wikipedia.org/wiki/EtherType</a>)</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=110677#respond" data-commentid="110677" data-postid="1018" data-belowelement="comment-110677" data-respondelement="respond" aria-label="Reply to dega">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-105864">
+		
+		<article id="comment-105864" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/616843806ebe8b9caf794b6758680e78.jpeg" srcset="https://secure.gravatar.com/avatar/616843806ebe8b9caf794b6758680e78?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="https://bitforestinfo.blogspot.com/" rel="external nofollow" class="url">Suraj singh Bisht</a> </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-105864"><time datetime="2017-02-15T16:13:28+05:30">February 15, 2017 at 4:04 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>For Latest Example Check This Link <a href="https://bitforestinfo.blogspot.com/2017/01/how-to-write-simple-packet-sniffer.html" rel="nofollow">http://bitforestinfo.blogspot.com/2017/01/how-to-write-simple-packet-sniffer.html</a></p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=105864#respond" data-commentid="105864" data-postid="1018" data-belowelement="comment-105864" data-respondelement="respond" aria-label="Reply to Suraj singh Bisht">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-101245">
+		
+		<article id="comment-101245" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/fefcbe9143bbfc4a7e637deb7792406b.jpeg" srcset="https://secure.gravatar.com/avatar/fefcbe9143bbfc4a7e637deb7792406b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">flyq </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-101245"><time datetime="2016-12-27T08:02:19+05:30">December 27, 2016 at 8:08 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>nice, thank you</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=101245#respond" data-commentid="101245" data-postid="1018" data-belowelement="comment-101245" data-respondelement="respond" aria-label="Reply to flyq">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-94614">
+		
+		<article id="comment-94614" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/3fc512aff3368ae775700bd6b45f21ea.jpeg" srcset="https://secure.gravatar.com/avatar/3fc512aff3368ae775700bd6b45f21ea?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">momo </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-94614"><time datetime="2016-09-24T09:04:42+05:30">September 24, 2016 at 9:09 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Can this code sniff SIP message ?<br>
+I see it can sniff NBNS packet ( format like SIP msg different only payload )<br>
+but can’t sniff SIP</p>
+<p>thx for your advie<br>
+sorry for my poor english</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=94614#respond" data-commentid="94614" data-postid="1018" data-belowelement="comment-94614" data-respondelement="respond" aria-label="Reply to momo">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-94560">
+		
+		<article id="comment-94560" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/3fc512aff3368ae775700bd6b45f21ea.jpeg" srcset="https://secure.gravatar.com/avatar/3fc512aff3368ae775700bd6b45f21ea?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">momo </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-94560"><time datetime="2016-09-23T15:37:21+05:30">September 23, 2016 at 3:03 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I want to sniff SIP. I already check in wireshark, sip is use udp only ( and port 5060 only ).<br>
+But Program never sniff SIP. </p>
+<p>Sorry for my poor english<br>
+Thx for your advice</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=94560#respond" data-commentid="94560" data-postid="1018" data-belowelement="comment-94560" data-respondelement="respond" aria-label="Reply to momo">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-86559">
+		
+		<article id="comment-86559" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/68fb2c86dea789c3f0cfcc9e3ab1ab1e.jpeg" srcset="https://secure.gravatar.com/avatar/68fb2c86dea789c3f0cfcc9e3ab1ab1e?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">MannyH </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-86559"><time datetime="2016-06-28T06:09:38+05:30">June 28, 2016 at 6:06 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi – Awesome post – love it! </p>
+<p>Any recommendations on how I can mod it for parsing pcaps?  I’d like to avoid using DPKT or PyShark! </p>
+<p>Thxs!!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=86559#respond" data-commentid="86559" data-postid="1018" data-belowelement="comment-86559" data-respondelement="respond" aria-label="Reply to MannyH">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-74437">
+		
+		<article id="comment-74437" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/9f8f2eee56d8a3596039d5e2f35209f4.jpeg" srcset="https://secure.gravatar.com/avatar/9f8f2eee56d8a3596039d5e2f35209f4?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">ankur </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-74437"><time datetime="2016-04-19T10:58:53+05:30">April 19, 2016 at 10:10 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>awesome….just awesome</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=74437#respond" data-commentid="74437" data-postid="1018" data-belowelement="comment-74437" data-respondelement="respond" aria-label="Reply to ankur">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70763">
+		
+		<article id="comment-70763" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/7bdb8d2322d9c700377f69e61900181b.jpeg" srcset="https://secure.gravatar.com/avatar/7bdb8d2322d9c700377f69e61900181b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="https://binarycodec.blogspot.com/" rel="external nofollow" class="url">cleber</a> </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-70763"><time datetime="2016-03-17T19:15:29+05:30">March 17, 2016 at 7:07 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>to save captures in archives:  $ sudo python sniffer.py &gt; log.txt</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=70763#respond" data-commentid="70763" data-postid="1018" data-belowelement="comment-70763" data-respondelement="respond" aria-label="Reply to cleber">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-70760">
+		
+		<article id="comment-70760" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/7bdb8d2322d9c700377f69e61900181b.jpeg" srcset="https://secure.gravatar.com/avatar/7bdb8d2322d9c700377f69e61900181b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="https://binarycodec.blogspot.com/" rel="external nofollow" class="url">cleber</a> </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-70760"><time datetime="2016-03-17T19:01:46+05:30">March 17, 2016 at 7:07 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Excelente tutorial!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=70760#respond" data-commentid="70760" data-postid="1018" data-belowelement="comment-70760" data-respondelement="respond" aria-label="Reply to cleber">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-69581">
+		
+		<article id="comment-69581" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/fe0a5e6cda646eaf8a7ede6d68e55dba.jpeg" srcset="https://secure.gravatar.com/avatar/fe0a5e6cda646eaf8a7ede6d68e55dba?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">ayiis </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-69581"><time datetime="2016-03-07T15:02:56+05:30">March 7, 2016 at 3:03 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>love it</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=69581#respond" data-commentid="69581" data-postid="1018" data-belowelement="comment-69581" data-respondelement="respond" aria-label="Reply to ayiis">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-68045">
+		
+		<article id="comment-68045" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/65c786ed8f9cf108d8597a28cfb75582.jpeg" srcset="https://secure.gravatar.com/avatar/65c786ed8f9cf108d8597a28cfb75582?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Veit </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-68045"><time datetime="2015-09-21T02:23:00+05:30">September 21, 2015 at 2:02 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for the great post. It is really usefull.<br>
+There is a way to block (drop) some packets? like:</p>
+<p>if  source_ip == ‘192.168.1.1’ :<br>
+     drop()</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=68045#respond" data-commentid="68045" data-postid="1018" data-belowelement="comment-68045" data-respondelement="respond" aria-label="Reply to Veit">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-67979">
+		
+		<article id="comment-67979" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/d4659f38a392fe3d2b0f19ac1863e7a8.jpeg" srcset="https://secure.gravatar.com/avatar/d4659f38a392fe3d2b0f19ac1863e7a8?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Eric </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67979"><time datetime="2015-06-28T10:50:00+05:30">June 28, 2015 at 10:10 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Can it dump to a pcap?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67979#respond" data-commentid="67979" data-postid="1018" data-belowelement="comment-67979" data-respondelement="respond" aria-label="Reply to Eric">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-67948">
+		
+		<article id="comment-67948" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/7d6ad2a9dba9ac3f8d0642cab0ae4b7d.jpeg" srcset="https://secure.gravatar.com/avatar/7d6ad2a9dba9ac3f8d0642cab0ae4b7d?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">John Just </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67948"><time datetime="2015-06-01T09:33:00+05:30">June 1, 2015 at 9:09 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I’m trying very hard to find how to convert the line below to 
+something in Windows that will capture the ethernet header.  Do you have
+ any ideas?  I have looked at the Python docs and been searching forums 
+but haven’t seen anything….<br>
+s = socket.socket( socket.AF_PACKET , socket.SOCK_RAW , socket.ntohs(0x0003))</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67948#respond" data-commentid="67948" data-postid="1018" data-belowelement="comment-67948" data-respondelement="respond" aria-label="Reply to John Just">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-67839">
+		
+		<article id="comment-67839" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e4fa44a485fa7c2f411792438eb21acf.jpeg" srcset="https://secure.gravatar.com/avatar/e4fa44a485fa7c2f411792438eb21acf?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Hong Kong </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67839"><time datetime="2015-02-23T19:41:00+05:30">February 23, 2015 at 7:07 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>May be you should try again with root previlege</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67839#respond" data-commentid="67839" data-postid="1018" data-belowelement="comment-67839" data-respondelement="respond" aria-label="Reply to Hong Kong">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-67765">
+		
+		<article id="comment-67765" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/3e4f0434051480cb0480e33a92627f3e.jpeg" srcset="https://secure.gravatar.com/avatar/3e4f0434051480cb0480e33a92627f3e?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">尤川豪 </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67765"><time datetime="2015-01-27T21:42:00+05:30">January 27, 2015 at 9:09 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>wow! what an awesome tutorial!<br>
+Thank you very much!<br>
+It’s really informative!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67765#respond" data-commentid="67765" data-postid="1018" data-belowelement="comment-67765" data-respondelement="respond" aria-label="Reply to 尤川豪">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-67601">
+		
+		<article id="comment-67601" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e1413afb925b27661ddc4ea81d1e6319.jpeg" srcset="https://secure.gravatar.com/avatar/e1413afb925b27661ddc4ea81d1e6319?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">pradeep </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67601"><time datetime="2014-11-24T18:20:00+05:30">November 24, 2014 at 6:06 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for the very details and great article.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67601#respond" data-commentid="67601" data-postid="1018" data-belowelement="comment-67601" data-respondelement="respond" aria-label="Reply to pradeep">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-67578">
+		
+		<article id="comment-67578" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/46972ac6ddc555521a4b8e1ba56d6b3e.jpeg" srcset="https://secure.gravatar.com/avatar/46972ac6ddc555521a4b8e1ba56d6b3e?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">matt </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67578"><time datetime="2014-11-12T00:55:00+05:30">November 12, 2014 at 12:12 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>So I tried to convert this code to python 3. But I am running 
+into problems with the unpacking part, specifically the line “eth = 
+unpack(‘!6s6sH’, eth_header)”. What is this line doing and why in 
+python3 does it seem to do something else?</p>
+<p>Anyone tried converting the code to python3?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67578#respond" data-commentid="67578" data-postid="1018" data-belowelement="comment-67578" data-respondelement="respond" aria-label="Reply to matt">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment odd alt depth-2" id="li-comment-67828">
+		
+		<article id="comment-67828" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/bc9785d7a4f1474db8dae3c26eeee745.jpeg" srcset="https://secure.gravatar.com/avatar/bc9785d7a4f1474db8dae3c26eeee745?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Phosphenius </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67828"><time datetime="2015-02-18T23:36:00+05:30">February 18, 2015 at 11:11 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>unpack(..) is part of the pack module which provides 
+functionality to pack binary data into strings objects. Since the 
+Python3 socket functions no longer work with string objects but with 
+bytes objects instead, you don’t need (un)packing anymore.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67828#respond" data-commentid="67828" data-postid="1018" data-belowelement="comment-67828" data-respondelement="respond" aria-label="Reply to Phosphenius">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even depth-2" id="li-comment-70693">
+		
+		<article id="comment-70693" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/ae1211215707f9089b5c5d355cff5408.png" srcset="https://secure.gravatar.com/avatar/ae1211215707f9089b5c5d355cff5408?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Cj Welborn </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-70693"><time datetime="2016-03-17T07:00:56+05:30">March 17, 2016 at 7:07 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>A while back I ported this to Python 3, and reformatted it a little. It’s on my paste site ( <a href="https://welbornprod.com/paste/?id=fgyx" rel="nofollow">https://welbornprod.com/paste/?id=fgyx</a> ).</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=70693#respond" data-commentid="70693" data-postid="1018" data-belowelement="comment-70693" data-respondelement="respond" aria-label="Reply to Cj Welborn">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-67531">
+		
+		<article id="comment-67531" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5e8caef20795b4535946f3cac7ec15b1.jpeg" srcset="https://secure.gravatar.com/avatar/5e8caef20795b4535946f3cac7ec15b1?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">aaron </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67531"><time datetime="2014-10-23T02:59:00+05:30">October 23, 2014 at 2:02 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for the great post. It is really helpful. Could you please
+ explain me what does ‘!HHLLBBHHH’ this means? Sorry for being naive.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67531#respond" data-commentid="67531" data-postid="1018" data-belowelement="comment-67531" data-respondelement="respond" aria-label="Reply to aaron">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment even depth-2" id="li-comment-67840">
+		
+		<article id="comment-67840" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/7841a97399e4e0035e1215b307c2461d.jpeg" srcset="https://secure.gravatar.com/avatar/7841a97399e4e0035e1215b307c2461d?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Random </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67840"><time datetime="2015-02-23T19:44:00+05:30">February 23, 2015 at 7:07 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I have tried googling it.<br>
+the “!” in unpack(“!HHLLBBHHH”) means the unpacked data should follow the format after this “!”,<br>
+which is “H, H, L, L, B, B, H, H, H”, these will unpacked as a tuple.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67840#respond" data-commentid="67840" data-postid="1018" data-belowelement="comment-67840" data-respondelement="respond" aria-label="Reply to Random">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-67526">
+		
+		<article id="comment-67526" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5e8caef20795b4535946f3cac7ec15b1.jpeg" srcset="https://secure.gravatar.com/avatar/5e8caef20795b4535946f3cac7ec15b1?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">aaron </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67526"><time datetime="2014-10-21T03:36:00+05:30">October 21, 2014 at 3:03 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>It’s really difficult to find the detailed program you have provided in<br>
+any other site. Thank you. If you also give the description for your<br>
+programs, it would become the great website for learning socket<br>
+programming.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67526#respond" data-commentid="67526" data-postid="1018" data-belowelement="comment-67526" data-respondelement="respond" aria-label="Reply to aaron">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-67525">
+		
+		<article id="comment-67525" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5e8caef20795b4535946f3cac7ec15b1.jpeg" srcset="https://secure.gravatar.com/avatar/5e8caef20795b4535946f3cac7ec15b1?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">aaron </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67525"><time datetime="2014-10-21T02:29:00+05:30">October 21, 2014 at 2:02 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for very useful info. I’m novice to socket programming. 
+Please help me with this. Is it possible to receive both TCP and ICMP 
+packets in a single code. Is it something like creating a socket with 
+this type: s = socket.socket(socket.AF_INET, socket.SOCK_RAW, 
+socket.IPPROTO_ICMP_TCP)</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67525#respond" data-commentid="67525" data-postid="1018" data-belowelement="comment-67525" data-respondelement="respond" aria-label="Reply to aaron">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-65992">
+		
+		<article id="comment-65992" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/6134034dbe33efa903731cea67aadf33.jpeg" srcset="https://secure.gravatar.com/avatar/6134034dbe33efa903731cea67aadf33?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Baktha </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65992"><time datetime="2014-02-22T05:04:00+05:30">February 22, 2014 at 5:05 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for the very clear and detailed note/tip!!</p>
+<p>One question– despite putting eth0 in promiscuous mode, I seem to be 
+able  to sniff ONLY packets destined to the Pi. I am trying to connect 
+the Pi  to a Layer2 switch, and using port mirroring/spanning, trying to
+ sniff<br>
+packets going to/from another port (on the Layer 2 switch).</p>
+<p>Any hints on why the Pi does not seem to be “see” or sniff packets with destination addresses other than its own?</p>
+<p>Thanks much!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65992#respond" data-commentid="65992" data-postid="1018" data-belowelement="comment-65992" data-respondelement="respond" aria-label="Reply to Baktha">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-65907">
+		
+		<article id="comment-65907" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/bdcb007555017e2fd3e0080d59bf824b.jpeg" srcset="https://secure.gravatar.com/avatar/bdcb007555017e2fd3e0080d59bf824b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">p </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65907"><time datetime="2013-12-26T02:50:00+05:30">December 26, 2013 at 2:02 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for the post. My question is how can you know that which 
+format specifier is to be used to unpack a particular header?  For an 
+example in case of a ethernet header we use unpack(!6s!6s!2s). How can I
+ know that I have to use strings and not any other format specifier to 
+get ethernet addresses? Is there any documentation for it?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65907#respond" data-commentid="65907" data-postid="1018" data-belowelement="comment-65907" data-respondelement="respond" aria-label="Reply to p">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-65802">
+		
+		<article id="comment-65802" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5a2d6a17424a997970d7a1caebdc5aa5.jpeg" srcset="https://secure.gravatar.com/avatar/5a2d6a17424a997970d7a1caebdc5aa5?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">spicyramen </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65802"><time datetime="2013-11-04T07:49:00+05:30">November 4, 2013 at 7:07 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I tried your code and have problems parsing fragmented packets, how can I reassemble them&gt;</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65802#respond" data-commentid="65802" data-postid="1018" data-belowelement="comment-65802" data-respondelement="respond" aria-label="Reply to spicyramen">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-65753">
+		
+		<article id="comment-65753" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/19e3059e4c67e2d0bb14961ddf36fec1.jpeg" srcset="https://secure.gravatar.com/avatar/19e3059e4c67e2d0bb14961ddf36fec1?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Paradise </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65753"><time datetime="2013-10-12T18:44:00+05:30">October 12, 2013 at 6:06 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi!</p>
+<p>I can’t understand how this could work since socket.recvfrom() seems to work only for IPPROTO_UDP sockets.</p>
+<p>When I try to do this:</p>
+<p>s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)<br>
+while True:<br>
+       print s.recvfrom(65565)</p>
+<p>I have this error:<br>
+”     print s.recvfrom(65565)<br>
+socket.error: [Errno 10022] An invalid argument was supplied”</p>
+<p>This works fine with IPPROTO_UDP</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65753#respond" data-commentid="65753" data-postid="1018" data-belowelement="comment-65753" data-respondelement="respond" aria-label="Reply to Paradise">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-65709">
+		
+		<article id="comment-65709" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/8d066dfecf6898569dbe9be0a4a43191.jpeg" srcset="https://secure.gravatar.com/avatar/8d066dfecf6898569dbe9be0a4a43191?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">ciobanu alexandru cristian </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65709"><time datetime="2013-09-14T16:39:00+05:30">September 14, 2013 at 4:04 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>thank you!</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65709#respond" data-commentid="65709" data-postid="1018" data-belowelement="comment-65709" data-respondelement="respond" aria-label="Reply to ciobanu alexandru cristian">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-65623">
+		
+		<article id="comment-65623" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/a21ae4b47451a91d1ed80a2d6c6b231b.jpeg" srcset="https://secure.gravatar.com/avatar/a21ae4b47451a91d1ed80a2d6c6b231b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">illyria </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65623"><time datetime="2013-07-29T19:41:00+05:30">July 29, 2013 at 7:07 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Nice article. Where does socket.ntohs(0x0003) come from? I couldn’t find this constant in any of the BSD socket docs.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65623#respond" data-commentid="65623" data-postid="1018" data-belowelement="comment-65623" data-respondelement="respond" aria-label="Reply to illyria">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-65600">
+		
+		<article id="comment-65600" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/2b4894402879938cc32827c74c52d167.jpeg" srcset="https://secure.gravatar.com/avatar/2b4894402879938cc32827c74c52d167?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">j0lly </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65600"><time datetime="2013-06-30T22:22:00+05:30">June 30, 2013 at 10:10 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hello sir, i’m really enjoying your articles about python and 
+sockets; I’m also translating it in my language and is a very 
+educational exercise. The unpack header is a bit over my knowledge but, 
+for what i can understand and read, you are using 20 bytes as standard 
+tcp header; Am i right? if so, is this a typical simplified construct to
+ not bother with the [options] flag in the tcp header? i’m a real 
+beginner in programming and in networking, but i would like to 
+understand if i’m parsing the right way your code. Thanks for the 
+precious articles</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65600#respond" data-commentid="65600" data-postid="1018" data-belowelement="comment-65600" data-respondelement="respond" aria-label="Reply to j0lly">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-64954">
+		
+		<article id="comment-64954" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/848870b4043d5ca319aa3111cb55845b.jpeg" srcset="https://secure.gravatar.com/avatar/848870b4043d5ca319aa3111cb55845b?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">tejas </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-64954"><time datetime="2013-02-28T11:39:00+05:30">February 28, 2013 at 11:11 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Why am I getting only UDP packets from other IPs in the network? Why am I not getting TCP packets from others?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=64954#respond" data-commentid="64954" data-postid="1018" data-belowelement="comment-64954" data-respondelement="respond" aria-label="Reply to tejas">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment odd alt depth-2" id="li-comment-64955">
+		
+		<article id="comment-64955" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e23f2767e6907e798da5b28694a2bf28.jpeg" srcset="https://secure.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="https://www.binarytides.com/" rel="external nofollow" class="url">Silver Moon</a> </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-64955"><time datetime="2013-02-28T12:27:00+05:30">February 28, 2013 at 12:12 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>what is the type of socket you are creating ?</p>
+<p>the following socket will fetch only incoming udp packets.<br>
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_UDP); </p>
+<p>the following socket will fetch all incoming and outgoing packets as raw ethernet frames.<br>
+s = socket.socket( socket.AF_PACKET , socket.SOCK_RAW , socket.ntohs(0x0003));</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=64955#respond" data-commentid="64955" data-postid="1018" data-belowelement="comment-64955" data-respondelement="respond" aria-label="Reply to Silver Moon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment even thread-even depth-1" id="li-comment-64949">
+		
+		<article id="comment-64949" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/40dae2032be7a2987fc6b9552a9d24f3.jpeg" srcset="https://secure.gravatar.com/avatar/40dae2032be7a2987fc6b9552a9d24f3?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">David Luu </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-64949"><time datetime="2013-02-22T12:42:00+05:30">February 22, 2013 at 12:12 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Helpful post. What would you recommend if we’d want to sniff 
+outgoing packets too? Maybe need to run sniffer on a machine that’s set 
+as a router/proxy where the endpoints of interest (to sniff) pass data 
+through?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=64949#respond" data-commentid="64949" data-postid="1018" data-belowelement="comment-64949" data-respondelement="respond" aria-label="Reply to David Luu">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment odd alt depth-2" id="li-comment-64950">
+		
+		<article id="comment-64950" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e23f2767e6907e798da5b28694a2bf28.jpeg" srcset="https://secure.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="https://www.binarytides.com/" rel="external nofollow" class="url">Silver Moon</a> </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-64950"><time datetime="2013-02-22T14:19:00+05:30">February 22, 2013 at 2:02 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>use the 2nd sniffer that sniffs both incoming and outgoing data along with ethernet headers</p>
+<p>s = socket.socket( socket.AF_PACKET , socket.SOCK_RAW , socket.ntohs(0x0003))</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=64950#respond" data-commentid="64950" data-postid="1018" data-belowelement="comment-64950" data-respondelement="respond" aria-label="Reply to Silver Moon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-64914">
+		
+		<article id="comment-64914" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5ad7c0714ee79a9c489608854b9e9f8f.jpeg" srcset="https://secure.gravatar.com/avatar/5ad7c0714ee79a9c489608854b9e9f8f?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">kapil </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-64914"><time datetime="2013-01-23T00:06:00+05:30">January 23, 2013 at 12:12 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>hehehhe…. man wats d need 2 write such a huge code… u cud hav 
+implemented d same thing in hardly 20-30 lines of code using the SCAPY 
+module in python….  :)</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=64914#respond" data-commentid="64914" data-postid="1018" data-belowelement="comment-64914" data-respondelement="respond" aria-label="Reply to kapil">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-58394">
+		
+		<article id="comment-58394" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/bcefb7d2b30666f62be143421046f6db.jpeg" srcset="https://secure.gravatar.com/avatar/bcefb7d2b30666f62be143421046f6db?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="http://www.jijokjose.com/" rel="external nofollow" class="url">jijokjose</a> </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-58394"><time datetime="2012-11-18T20:23:56+05:30">November 18, 2012 at 8:08 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for the script. I run this sniffer script and it works 
+perfectly but the data portion is not much formatted. Some unreadable 
+chacters are displaying. Like the following</p>
+<p>Data : 6\FC\81\800000pagead2googlesyndicationcom000\C000000c0pagead46ldoubleclicknet0\C0;00000f0J}\EB-</p>
+<p>Is there is any way to convert this to unreadable content into readable text ..??</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=58394#respond" data-commentid="58394" data-postid="1018" data-belowelement="comment-58394" data-respondelement="respond" aria-label="Reply to jijokjose">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-58507">
+		
+		<article id="comment-58507" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e23f2767e6907e798da5b28694a2bf28.jpeg" srcset="https://secure.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Silver Moon <span> Post author</span></cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-58507"><time datetime="2012-11-20T18:32:54+05:30">November 20, 2012 at 6:06 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>unreadable characters mean they dont have any representable ascii character.<br>
+so they just display as codes.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=58507#respond" data-commentid="58507" data-postid="1018" data-belowelement="comment-58507" data-respondelement="respond" aria-label="Reply to Silver Moon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-55565">
+		
+		<article id="comment-55565" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/1443a67b8c1b8ffd44cddad350ae6e2a.jpeg" srcset="https://secure.gravatar.com/avatar/1443a67b8c1b8ffd44cddad350ae6e2a?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Mark </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-55565"><time datetime="2012-09-10T19:53:52+05:30">September 10, 2012 at 7:07 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Great script thanks. Is there a way to taylor it to only sniff on a particular port?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=55565#respond" data-commentid="55565" data-postid="1018" data-belowelement="comment-55565" data-respondelement="respond" aria-label="Reply to Mark">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-55584">
+		
+		<article id="comment-55584" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e23f2767e6907e798da5b28694a2bf28.jpeg" srcset="https://secure.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Silver Moon <span> Post author</span></cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-55584"><time datetime="2012-09-11T12:07:42+05:30">September 11, 2012 at 12:12 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>its not possible directly, instead the port of all tcp/udp 
+packets need to be checked and the particular packet has to be picked 
+out.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=55584#respond" data-commentid="55584" data-postid="1018" data-belowelement="comment-55584" data-respondelement="respond" aria-label="Reply to Silver Moon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment odd alt depth-3" id="li-comment-67571">
+		
+		<article id="comment-67571" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/5e8caef20795b4535946f3cac7ec15b1.jpeg" srcset="https://secure.gravatar.com/avatar/5e8caef20795b4535946f3cac7ec15b1?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Aaron88 </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-67571"><time datetime="2014-11-09T01:07:00+05:30">November 9, 2014 at 1:01 am</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>why can’t we bind a socket to particular port and sniff only on 
+that port. Kindly reply, I really need information on this for my 
+project. All of my questions asked here are ignored. Please guys.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=67571#respond" data-commentid="67571" data-postid="1018" data-belowelement="comment-67571" data-respondelement="respond" aria-label="Reply to Aaron88">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment even depth-2" id="li-comment-65660">
+		
+		<article id="comment-65660" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/41a9da1c892779f3125cbe1a556a839e.jpeg" srcset="https://secure.gravatar.com/avatar/41a9da1c892779f3125cbe1a556a839e?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">answerguy </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65660"><time datetime="2013-08-15T14:39:00+05:30">August 15, 2013 at 2:02 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>yep there is.<br>
+Wrap the following code: </p>
+<p>s.recvfrom(2048)<br>
+in a while loop like this:</p>
+<p>while True:</p>
+<p>    while http_port is not 80:<br>
+        pack = s.recvfrom(2048)</p>
+<p>        tcpHeader = pack[0][34:54]<br>
+        tcp_hdr = struct.unpack(“!HH16s”, tcpHeader)<br>
+        http_port = tcp_hdr[0]<br>
+    function(pack[0][54:])                       #pass the data into a function</p>
+<p>it will check the port of every packet and will pass the data through to a function when a packet’s port is 80.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65660#respond" data-commentid="65660" data-postid="1018" data-belowelement="comment-65660" data-respondelement="respond" aria-label="Reply to answerguy">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-51843">
+		
+		<article id="comment-51843" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/f256678460c5afe31bdab98049fcde6f.jpeg" srcset="https://secure.gravatar.com/avatar/f256678460c5afe31bdab98049fcde6f?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">anon </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-51843"><time datetime="2012-08-28T21:22:43+05:30">August 28, 2012 at 9:09 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>@Jamie thx for your hint.<br>
+@Silver Moon great work works on win7 (as admin) to when I use socket.IPPROTO_IP instand of socket.IPPROTO_TCP</p>
+<p>for hexdump output:<br>
+<a href="https://code.activestate.com/recipes/142812/" rel="nofollow">http://code.activestate.com/recipes/142812/</a></p>
+<p>so kindest regards you two made my day :-D</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=51843#respond" data-commentid="51843" data-postid="1018" data-belowelement="comment-51843" data-respondelement="respond" aria-label="Reply to anon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+	
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-32131">
+		
+		<article id="comment-32131" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/bcaefc7fc889d6d9b17eb3db74505c37.jpeg" srcset="https://secure.gravatar.com/avatar/bcaefc7fc889d6d9b17eb3db74505c37?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">ain </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-32131"><time datetime="2012-04-10T12:24:07+05:30">April 10, 2012 at 12:12 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>hi sir..<br>
+it this source code available when running on window,<br>
+for your information, i want to create a packet sniffer program using python on windows platfrom..<br>
+and the worse thing is, i’m the beginner on python. </p>
+<p>i’ve tried ur better sniffer code but it keep give me this error.</p>
+<p>Traceback (most recent call last):<br>
+  File “C:\Python26\New folder\sniff.py”, line 6, in<br>
+    s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(0x0003))<br>
+AttributeError: ‘module’ object has no attribute ‘AF_PACKET’</p>
+<p>and i’m stuck. i don’t know what the solution..<br>
+pls help me out :(</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=32131#respond" data-commentid="32131" data-postid="1018" data-belowelement="comment-32131" data-respondelement="respond" aria-label="Reply to ain">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-32133">
+		
+		<article id="comment-32133" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e23f2767e6907e798da5b28694a2bf28.jpeg" srcset="https://secure.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name"><a href="https://www.binarytides.com/" rel="external nofollow" class="url">Silver Moon</a> <span> Post author</span></cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-32133"><time datetime="2012-04-10T12:35:07+05:30">April 10, 2012 at 12:12 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>this code is only for Linux/Unix or similar operating systems.<br>
+It will not work on windows , since windows has very limited raw socket support.</p>
+<p>You can check this page :<br>
+<a href="https://docs.python.org/library/socket.html" rel="nofollow">http://docs.python.org/library/socket.html</a></p>
+<p>It has “network sniffer with raw sockets on Windows” towards the bottom.</p>
+<p>However first brush up your python skills.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=32133#respond" data-commentid="32133" data-postid="1018" data-belowelement="comment-32133" data-respondelement="respond" aria-label="Reply to Silver Moon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment even depth-3" id="li-comment-65732">
+		
+		<article id="comment-65732" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/6ad55d6c054ea9cee04f2e9aeb66090e.jpeg" srcset="https://secure.gravatar.com/avatar/6ad55d6c054ea9cee04f2e9aeb66090e?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">xavier </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-65732"><time datetime="2013-09-28T17:40:00+05:30">September 28, 2013 at 5:05 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>hello,I have try the “network sniffer with raw sockets on Windows”.<br>
+And I only get outgoing packages,</p>
+<p>how can i get incoming packages on Windows?</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=65732#respond" data-commentid="65732" data-postid="1018" data-belowelement="comment-65732" data-respondelement="respond" aria-label="Reply to xavier">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="comment odd alt thread-even depth-1" id="li-comment-31771">
+		
+		<article id="comment-31771" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/650a323660ecb260e313e02566c3e68e.jpeg" srcset="https://secure.gravatar.com/avatar/650a323660ecb260e313e02566c3e68e?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Jamie </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-31771"><time datetime="2012-03-21T14:47:12+05:30">March 21, 2012 at 2:02 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thanks for this script.  I was looking for something to use in 
+black box testing.  I am doing some work testing an embedded linux 
+system which has python but we don’t have a compiler to build stuff like
+ tcpdump that isn’t installed</p>
+<p>In the last, improved script there is a typo/slip at line 121, it should be </p>
+<p>data=packet[h_size:]</p>
+<p>Keep up the good work</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=31771#respond" data-commentid="31771" data-postid="1018" data-belowelement="comment-31771" data-respondelement="respond" aria-label="Reply to Jamie">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment even depth-2" id="li-comment-55587">
+		
+		<article id="comment-55587" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/1443a67b8c1b8ffd44cddad350ae6e2a.jpeg" srcset="https://secure.gravatar.com/avatar/1443a67b8c1b8ffd44cddad350ae6e2a?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Mark </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-55587"><time datetime="2012-09-11T13:33:52+05:30">September 11, 2012 at 1:01 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>I agree. All data parsing lines seem to be:</p>
+<p>data = packet[data_size:]</p>
+<p>Shouldn’t they all be:</p>
+<p>data=packet[h_size:]</p>
+<p>?</p>
+<p>Mark</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=55587#respond" data-commentid="55587" data-postid="1018" data-belowelement="comment-55587" data-respondelement="respond" aria-label="Reply to Mark">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-3" id="li-comment-55588">
+		
+		<article id="comment-55588" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/e23f2767e6907e798da5b28694a2bf28.jpeg" srcset="https://secure.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">Silver Moon <span> Post author</span></cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-55588"><time datetime="2012-09-11T13:56:10+05:30">September 11, 2012 at 1:01 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>yes, it should be<br>
+data=packet[h_size:]</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=55588#respond" data-commentid="55588" data-postid="1018" data-belowelement="comment-55588" data-respondelement="respond" aria-label="Reply to Silver Moon">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment even depth-4" id="li-comment-71163">
+		
+		<article id="comment-71163" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/fe0a5e6cda646eaf8a7ede6d68e55dba.jpeg" srcset="https://secure.gravatar.com/avatar/fe0a5e6cda646eaf8a7ede6d68e55dba?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">ayiis </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-71163"><time datetime="2016-03-21T15:21:57+05:30">March 21, 2016 at 3:03 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>one more thing that, the length of TCP data should be equal to </p>
+<p>iph[2] – iph_length – tcph_length*4</p>
+<p>i think you made a mistake here :P</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/?replytocom=71163#respond" data-commentid="71163" data-postid="1018" data-belowelement="comment-71163" data-respondelement="respond" aria-label="Reply to ayiis">Reply</a>			</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	<ol class="children">
+	
+	<li class="comment odd alt depth-5" id="li-comment-87719">
+		
+		<article id="comment-87719" class="comment">
+			
+			<header class="comment-header comment-author vcard">
+				<img alt="" src="sniff-packets-python_files/827989976fca29805d570e5d5610a3f9.jpeg" srcset="https://secure.gravatar.com/avatar/827989976fca29805d570e5d5610a3f9?s=128&amp;r=g 2x" class="avatar avatar-64 photo" width="64" height="64"><cite class="fn" itemprop="name">bread </cite><p class="comment-meta"><a href="https://www.binarytides.com/python-packet-sniffer-code-linux/#comment-87719"><time datetime="2016-07-08T16:05:03+05:30">July 8, 2016 at 4:04 pm</time></a></p>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thank you SilverMoon for your work!<br>
+And thank you, ayiis!</p>
+<p>I had a problem with empty TCP packets. This program said the TCP data size would be 6, while it was 0.<br>
+But I can’t find the problem, since<br>
+data_size = len(packet) – eth_length + iph_length + tcph_length * 4<br>
+should be equal to<br>
+data_size = iph[2] – iph_length – tcph_length * 4</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+							</div>
+			<!-- .reply -->
+		
+		</article>
+		<!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		</ol>
+		<!-- /.commentlist -->
+
+		
+		
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.binarytides.com/python-packet-sniffer-code-linux/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.binarytides.com/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1018" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1567491380300"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments .comments-area -->
+
+        
+    </div>
+    <!-- #content -->
+</main>
+<!-- #primary -->
+
+
+
+    <aside id="secondary" class="widget-area sidebar sidebar-primary" itemscope="" itemtype="http://schema.org/WPSideBar">
+        <center style="overflow:hidden;">
+<script async="" src="sniff-packets-python_files/adsbygoogle.js"></script>
+<!-- binarytides 300x250 sidebar -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5814774904969415" data-ad-slot="7101063767"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+<br><section id="search-2" class="widget widget_search"><h3 class="title">Search</h3><form role="search" method="get" id="searchform" class="searchform" action="https://www.binarytides.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></section><section id="lsi_widget-2" class="widget widget_lsi_widget"><h3 class="title">Connect with us</h3><ul class="lsi-social-icons icon-set-lsi_widget-2" style="text-align: left"><li class="lsi-social-facebook"><a class="tooltip tooltipstered" rel="nofollow" aria-label="Facebook" href="https://www.facebook.com/binarytides" target="_blank"><i class="lsicon lsicon-facebook"></i></a></li><li class="lsi-social-twitter"><a class="tooltip tooltipstered" rel="nofollow" aria-label="Twitter" href="https://twitter.com/binarytides" target="_blank"><i class="lsicon lsicon-twitter"></i></a></li></ul></section><section id="wp_related_posts_widget" class="widget widget_wp_related_posts">
+<div class="wp_rp_wrap  wp_rp_modern" id="wp_rp_first"><div class="wp_rp_content"><h3 class="title">Other interesting stuff</h3><ul class="related_post wp_rp"><li data-position="0" data-poid="in-3102" data-post-type="none"><a href="https://www.binarytides.com/python-syn-flood-program-raw-sockets-linux/" class="wp_rp_thumbnail"><img src="sniff-packets-python_files/5.jpg" alt="Syn flood program in python using raw sockets (Linux)" width="150" height="150"></a><a href="https://www.binarytides.com/python-syn-flood-program-raw-sockets-linux/" class="wp_rp_title">Syn flood program in python using raw sockets (Linux)</a></li><li data-position="1" data-poid="in-2919" data-post-type="none"><a href="https://www.binarytides.com/code-a-packet-sniffer-in-python-with-pcapy-extension/" class="wp_rp_thumbnail"><img src="sniff-packets-python_files/2.jpg" alt="Code a packet sniffer in python with pcapy extension" width="150" height="150"></a><a href="https://www.binarytides.com/code-a-packet-sniffer-in-python-with-pcapy-extension/" class="wp_rp_title">Code a packet sniffer in python with pcapy extension</a></li><li data-position="2" data-poid="in-5578" data-post-type="none"><a href="https://www.binarytides.com/python-socket-server-code-example/" class="wp_rp_thumbnail"><img src="sniff-packets-python_files/python-150x150.png" alt="Code a simple socket server in Python" width="150" height="150"></a><a href="https://www.binarytides.com/python-socket-server-code-example/" class="wp_rp_title">Code a simple socket server in Python</a></li><li data-position="3" data-poid="in-3119" data-post-type="none"><a href="https://www.binarytides.com/raw-socket-programming-in-python-linux/" class="wp_rp_thumbnail"><img src="sniff-packets-python_files/23.jpg" alt="Raw socket programming in python (Linux)" width="150" height="150"></a><a href="https://www.binarytides.com/raw-socket-programming-in-python-linux/" class="wp_rp_title">Raw socket programming in python (Linux)</a></li><li data-position="4" data-poid="in-60" data-post-type="none"><a href="https://www.binarytides.com/raw-sockets-c-code-linux/" class="wp_rp_thumbnail"><img src="sniff-packets-python_files/30.jpg" alt="Code raw sockets in C on Linux" width="150" height="150"></a><a href="https://www.binarytides.com/raw-sockets-c-code-linux/" class="wp_rp_title">Code raw sockets in C on Linux</a></li><li data-position="5" data-poid="in-2204" data-post-type="none"><a href="https://www.binarytides.com/python-socket-programming-tutorial/" class="wp_rp_thumbnail"><img src="sniff-packets-python_files/10.jpg" alt="Python socket – network programming tutorial" width="150" height="150"></a><a href="https://www.binarytides.com/python-socket-programming-tutorial/" class="wp_rp_title">Python socket – network programming tutorial</a></li></ul></div></div>
+</section>    </aside>
+    
+
+
+    
+
+
+</div>
+<!-- box -->
+</div>
+<!-- wrap -->
+
+
+</div>
+<!-- #main .wrapper .site-inner -->
+
+<!-- Footer Widgets area  -->
+<div class="footer-widgets">
+    <div class="wrap">
+    <div class="box-wrap">
+            
+<div class="sidebar-footer">
+    
+    <div class="footer-widgets-1 widget-area">
+        </div>
+
+    <div class="footer-widgets-2 widget-area">
+        </div>
+
+    <div class="footer-widgets-3 widget-area">
+        </div>
+
+</div>
+    </div>
+    </div>
+</div>
+
+
+<!-- Footer Wide Widgets -->
+<div class="sidebar-footer-wide">
+    <div class="wrap">
+    <div class="box-wrap">
+            <div class="footer-wide-widgets widget-area">
+<section id="text-18" class="widget widget_text container-fluid">			<div class="textwidget"><p><span style="font-size:0.9em;">This
+ site, binarytides.com is a participant in the Amazon Services LLC 
+Associates Program, an affiliate advertising program designed to provide
+ a means for sites to earn advertising fees by advertising and linking 
+to Amazon.com.</span></p>
+</div>
+		</section></div>
+
+
+    </div>
+    </div>
+</div>
+
+
+<!-- Footer Menu  -->
+<div class="footer-menu">    
+    <div class="wrap">
+    <div class="box-wrap">
+        <ul id="menu-footer" class="menu"><li id="menu-item-8164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8164"><a href="https://www.binarytides.com/about/">About us</a></li>
+<li id="menu-item-8165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8165"><a href="https://www.binarytides.com/contact/">Contact us</a></li>
+<li id="menu-item-8166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8166"><a href="https://www.binarytides.com/privacy/">Privacy Policy</a></li>
+<li id="menu-item-8167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8167"><a href="https://www.binarytides.com/terms/">Terms of Service</a></li>
+</ul>    </div>
+    </div>
+</div>
+
+
+
+
+<!-- Final footer  -->
+<footer class="site-footer">
+    <div class="wrap">
+    <div class="box-wrap">
+        <p>Copyright © 2019 · BinaryTides</p>
+    </div>
+    </div>
+</footer>
+
+<!-- Clear before page wrapper  -->
+<div class="clear"></div>
+
+</div>
+<!-- #page -->
+
+<!-- google analytics event tracking -->
+<script type="text/javascript">
+
+if(window.jQuery)
+{
+
+jQuery(document).ready(function() {
+
+jQuery('li.SPOSTARBUST-Related-Post a').click(function() 
+{ 
+	ga('send', 'event', 'clicks', 'related_posts_right', $(this).html(), {'nonInteraction': 1});
+});
+	
+//For adverts and offers, save the href/link
+jQuery('a.offer').click(function() 
+{ 
+//	_gaq.push(['_trackEvent', 'clicks', 'offer', $(this).attr('href') , 5, true]);
+});
+
+jQuery('.postBoxMidInner p img').closest('p').css('clear','both');
+
+
+// detect ad blocking
+if( jQuery('.adcontent').height() == 0 )
+{
+	// console.log('Sad. You have ad blocker enabled');
+	ga('send', 'event', 'adblocks', 'adblocks', 'adblocks', {'nonInteraction': 1});
+
+	// add some content to the empty ad area
+}
+});
+
+}
+
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/www.binarytides.com\/blog\/wp-admin\/admin-ajax.php","post_id":"1018","is_singular":"1"};
+/* ]]> */
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript" defer="defer" src="sniff-packets-python_files/autoptimize_404f15b1b46a2c3fb0823ef52b70f372.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
+<!-- *´¨)
+     ¸.•´¸.•*´¨) ¸.•*¨)
+     (¸.•´ (¸.•` ¤ Comet Cache is Fully Functional ¤ ´¨) -->
+<!-- Cache File Version Salt:       n/a -->
+<!-- Cache File URL:                https://www.binarytides.com/python-packet-sniffer-code-linux/ -->
+<!-- Cache File Path:               /cache/comet-cache/cache/https/www-binarytides-com/python-packet-sniffer-code-linux.html -->
+<!-- Cache File Generated Via:      HTTP request -->
+<!-- Cache File Generated On:       Sep 1st, 2019 @ 7:23 am UTC -->
+<!-- Cache File Generated In:       0.49129 seconds -->
+<!-- Cache File Expires On:         Sep 8th, 2019 @ 7:23 am UTC -->
+<!-- Cache File Auto-Rebuild On:    Sep 8th, 2019 @ 7:23 am UTC -->
+<!-- Loaded via Cache On:    Sep 3rd, 2019 @ 6:16 am UTC -->
+<!-- Loaded via Cache In:    0.03048 seconds -->

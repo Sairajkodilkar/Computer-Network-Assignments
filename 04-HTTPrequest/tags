@@ -1,0 +1,168 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/sairaj/Program/Computer2021-22/CN/Assignments/04-HTTPrequest/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+0	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^NAME=0 HREF="http:\/\/info.cern.ch.\/hypertext\/TBL_Disclaimer.html">Tim BL<\/A><\/A>$/;"	a
+0	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=0 HREF="http:\/\/info.cern.ch.\/hypertext\/TBL_Disclaimer.html">Tim BL<\/A>$/;"	a
+0	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^NAME=0 HREF="http:\/\/info.cern.ch.\/hypertext\/TBL_Disclaimer.html">Tim BL<\/A>$/;"	a
+0	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<ADDRESS><A NAME=0 HREF=..\/..\/WWW\/disclaimer.html>Tim BL<\/A>$/;"	a
+0	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=0 HREF="WhatIs.html">$/;"	a
+0	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^Hypertext is text which contains <A NAME=0 HREF=Terms.html#link>links<\/A> to other texts. The t/;"	a
+1	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^NAME=1 HREF="KeepingTrack.html">How does www keep track of the available$/;"	a
+1	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=1 HREF="9209.html">September 1992<\/A>$/;"	a
+1	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^NAME=1 HREF="MarkUp\/MarkUp.html">$/;"	a
+1	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^Making a web is as simple as writing a few <A NAME=1 HREF=MarkUp\/MarkUp.html>SGML<\/A> files wh/;"	a
+1	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^coined by <A NAME=1 HREF=Xanadu.html#Nelson>Ted Nelson<\/A> around 1965 (see <A NAME=12 HREF=..\//;"	a
+10	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> CIA <A NAME=46 HREF=http:\/\/info.cern.ch:8001\/cmns-moon.think.com:210\/CIA?>World Fact Bo/;"	a
+10	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=10 HREF="..\/MidasWWW\/Status.html">MidasWWW<\/A> browser$/;"	a
+10	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<LI><A NAME=10 HREF=..\/Standards\/Overview.html>Standards<\/A> .<\/A>$/;"	a
+11	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=11 HREF="..\/Macintosh\/Status.html">Mac Browser<\/A> .  She$/;"	a
+12	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=12 HREF=http:\/\/info.cern.ch:8001\/sol.acs.unt.edu\/midi?> MIDI interfacing<\/A> , /;"	a
+12	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=12 HREF="..\/Curses\/Release_00.html">release note<\/A> for details.<P>$/;"	a
+12	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^coined by <A NAME=1 HREF=Xanadu.html#Nelson>Ted Nelson<\/A> around 1965 (see <A NAME=12 HREF=..\//;"	a
+13	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=13 HREF="Status.html">Software Products<\/A>$/;"	a
+14	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=14 HREF=http:\/\/info.cern.ch:8001\/cmns-moon.think.com\/KJV?> The Bible<\/A> (King /;"	a
+14	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=14 HREF="People.html">People<\/A>$/;"	a
+15	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=14 HREF=http:\/\/info.cern.ch:8001\/cmns-moon.think.com\/KJV?> The Bible<\/A> (King /;"	a
+15	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=15 HREF="History.html">History<\/A>$/;"	a
+19	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<LI><A NAME=19 HREF=..\/Conferences\/Overview.html>Conferences<\/A>$/;"	a
+2	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^NAME=2 HREF="WAISandGopher.html">How does W3 compare with WAIS and$/;"	a
+2	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=2 HREF="http:\/\/hoohoo.ncsa.uiuc.edu:80\/">NCSA<\/A>  in Illinois,$/;"	a
+2	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^NAME=2 HREF="Protocols\/HTTP\/AsImplemented.html">HTTP<\/A> and data formats such as<A$/;"	a
+2	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^HTTP <A NAME=2 HREF=Daemon\/Overview.html>daemon<\/A> , and making at least one link into your w/;"	a
+2	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<LI><A NAME=2 HREF=Terms.html>A list of terms<\/A> used in hypertext litterature.$/;"	a
+21	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^systems<\/A> , about<A NAME=65 HREF=http:\/\/info.cern.ch:8001\/nnsc.nsf.net:210\/internet-resou/;"	a
+23	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^to them. But you can find out how with<A NAME=23 HREF=http:\/\/info.cern.ch:8001\/pegun.law.colu/;"	a
+24	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=24 HREF="Summary.html">executive$/;"	a
+25	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=25 HREF="Daemon\/Overview.html">Servers<\/A> , <A$/;"	a
+26	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DT><A NAME=26>Libraries<\/A>$/;"	a
+26	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=26 HREF="NeXT\/WorldWideWeb.html">NeXTStep<\/A>$/;"	a
+27	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=27 HREF="LineMode\/Browser.html">Line Mode<\/A> ,X11 <A$/;"	a
+28	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=66 HREF=http:\/\/info.cern.ch:8001\/cs.widener.edu:8000\/bmcr?> BMCR classical revie/;"	a
+29	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=weather HREF=gopher:\/\/mermaid.micro.umn.edu:70\/11\/Weather> US weather<\/A> , sta/;"	a
+29	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=29 HREF="Administration\/Mailing\/Overview.html">Mailing lists<\/A>$/;"	a
+3	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^NAME=3 HREF="Server.html">How do I create my own server<\/A> ?$/;"	a
+3	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=3 HREF="http:\/\/info.in2p3.fr.:80\/">$/;"	a
+3	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^NAME=3 HREF="TheProject.html">W3 project<\/A> at CERN.  Whilst not legally$/;"	a
+3	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^to the documents found.  A simple protocol ("<A NAME=3 HREF=Protocols\/HTTP\/AsImplemented.html>/;"	a
+30	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=30 HREF="Policy.html">Policy<\/A> , November's  <A$/;"	a
+34	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=34 HREF="News\/9211.html">W3  news<\/A> ,$/;"	a
+35	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=35 HREF="Status.html#35">Viola<\/A> ,  <A$/;"	a
+37	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=37 HREF="Helping.html">How can I help<\/A> ?$/;"	a
+39	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> See <A NAME=40 HREF=Networking.html>Networking<\/A> , <A NAME=39 HREF=http:\/\/iicm.tu-graz/;"	a
+4	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^NAME=4 HREF="NoInternet.html">Can I get W3 documents if I'm not$/;"	a
+4	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=4 HREF="http:\/\/kviexp.kvi.nl\/">KVI<\/A>$/;"	a
+4	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<H3>Try it<\/H3>You can try the simple <A NAME=4 HREF=LineMode\/Browser.html>line mode browser<\//;"	a
+4	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<LI><A NAME=4 HREF=TheProject.html>WorldWideWeb is a project<\/A>  which uses hypertext concepts/;"	a
+40	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> See <A NAME=40 HREF=Networking.html>Networking<\/A> , <A NAME=39 HREF=http:\/\/iicm.tu-graz/;"	a
+40	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=40 HREF="Bibliography.html">Bibliography<\/A>$/;"	a
+41	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=41 HREF="FAQ\/List.html">Frequently Asked Questions<\/A> .$/;"	a
+42	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=42 HREF=..\/..\/Products\/WAIS\/Sources\/Political.html> US politics<\/A> . Includes/;"	a
+43	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> See <A NAME=40 HREF=Networking.html>Networking<\/A> , <A NAME=39 HREF=http:\/\/iicm.tu-graz/;"	a
+44	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> See <A NAME=40 HREF=Networking.html>Networking<\/A> , <A NAME=39 HREF=http:\/\/iicm.tu-graz/;"	a
+44	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=44 HREF="..\/DataSources\/Top.html">What's out there?<\/A>$/;"	a
+45	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=45 HREF="..\/DataSources\/bySubject\/Overview.html"> subjects<\/A>$/;"	a
+46	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> CIA <A NAME=46 HREF=http:\/\/info.cern.ch:8001\/cmns-moon.think.com:210\/CIA?>World Fact Bo/;"	a
+46	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=46 HREF="Help.html">Help<\/A>$/;"	a
+47	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=47 HREF="Technical.html">Technical<\/A>$/;"	a
+48	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=48 HREF="..\/README.html">Getting code<\/A>$/;"	a
+49	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=66 HREF=http:\/\/info.cern.ch:8001\/cs.widener.edu:8000\/bmcr?> BMCR classical revie/;"	a
+49	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=49 HREF="LineMode\/Defaults\/Distribution.html">$/;"	a
+5	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=5 HREF="http:\/\/hoohoo.ncsa.uiuc.edu:80\/docs\/collage.html">X-Collage<\/A> system.  Two C/;"	a
+5	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^Also available is a <A NAME=5 HREF=NeXT\/WorldWideWeb.html>hypertext editor<\/A> for the NeXT (W/;"	a
+5	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<LI>A newsgroup on hypertext, <A NAME=5 HREF=news:alt.hypertext>"alt.hypertext"<\/A> .$/;"	a
+50	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=50 HREF=\/\/mrcnext.cso.uiuc.edu\/gutenberg> Project Gutenberg<\/A> : two classic bo/;"	a
+51	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=51 HREF="Tools\/Overview.html">Tools<\/A> ,<A$/;"	a
+52	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<H1>Information by Subject<\/H1>See also arrangements by<A NAME=63 HREF=..\/byOrganisation\/Over/;"	a
+52	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=52 HREF="Status.html#57">$/;"	a
+53	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=53 HREF="MailRobot\/Overview.html"> Mail robot<\/A> ,<A$/;"	a
+54	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=12 HREF=http:\/\/info.cern.ch:8001\/sol.acs.unt.edu\/midi?> MIDI interfacing<\/A> , /;"	a
+55	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^,<A NAME=55 HREF=Computing\/Languages.html> Languages<\/A> , <A NAME=58 HREF=Computing\/Algorith/;"	a
+56	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=56 HREF=Physics\/HEP.html> High Energy Physics<\/A> , <A NAME=73 HREF=http:\/\/sunsi/;"	a
+57	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=14 HREF=http:\/\/info.cern.ch:8001\/cmns-moon.think.com\/KJV?> The Bible<\/A> (King /;"	a
+58	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^,<A NAME=55 HREF=Computing\/Languages.html> Languages<\/A> , <A NAME=58 HREF=Computing\/Algorith/;"	a
+59	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> Mailing list <A NAME=59 HREF=http:\/\/info.cern.ch:8001\/archive.orst.edu:9000\/aeronautics/;"	a
+6	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=6 HREF="\/\/ftp.cwi.nl\/pub\/www\/default.html">CWI<\/A> both in the Netherlands,<A$/;"	a
+6	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<H1>WorldWideWeb - Summary<\/H1>The <A NAME=6 HREF=TheProject.html>WWW<\/A> project merges the t/;"	a
+60	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=60 HREF=http:\/\/info.cern.ch:8001\/cirm2.univ-mrs.fr:210\/%2Fuser%2Fbase%2Fbib-cirm/;"	a
+61	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> See <A NAME=61 HREF=Bio\/Overview.html>separate list<\/A> .$/;"	a
+62	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> Roget's <A NAME=62 HREF=http:\/\/info.cern.ch:8001\/wais.cic.net:210\/roget-thesaurus?>Thes/;"	a
+63	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<H1>Information by Subject<\/H1>See also arrangements by<A NAME=63 HREF=..\/byOrganisation\/Over/;"	a
+64	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=64 HREF=..\/Archives\/CoombsPapers.html> Coombs papers archive<\/A> ./;"	a
+65	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^systems<\/A> , about<A NAME=65 HREF=http:\/\/info.cern.ch:8001\/nnsc.nsf.net:210\/internet-resou/;"	a
+66	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=66 HREF=http:\/\/info.cern.ch:8001\/cs.widener.edu:8000\/bmcr?> BMCR classical revie/;"	a
+66	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^Thai-Yunnan: <A NAME=66 HREF=http:\/\/info.cern.ch:8001\/cs.widener.edu:8000\/bmcr?>Davis collec/;"	a
+67	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=50 HREF=\/\/mrcnext.cso.uiuc.edu\/gutenberg> Project Gutenberg<\/A> : two classic bo/;"	a
+68	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^explanations<\/A> , the <A NAME=68 HREF=\/\/mrcnext.cso.uiuc.edu\/gutenberg\/AAINDEX.NEW>index a/;"	a
+69	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^explanations<\/A> , the <A NAME=68 HREF=\/\/mrcnext.cso.uiuc.edu\/gutenberg\/AAINDEX.NEW>index a/;"	a
+7	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=7 HREF="\/\/ftp.cwi.nl\/pub\/www\/audio-formats\/a00.html">Audio formats<\/A> ,  and NCSA h/;"	a
+7	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<LI><A NAME=7 HREF=..\/Products\/Overview.html>Commercial (and academic) products<\/A>$/;"	a
+70	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^,<A NAME=70 HREF=\/\/mrcnext.cso.uiuc.edu\/gutenberg\/ETEXT92> 1992<\/A> , and<A NAME=71 HREF=\//;"	a
+71	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^,<A NAME=70 HREF=\/\/mrcnext.cso.uiuc.edu\/gutenberg\/ETEXT92> 1992<\/A> , and<A NAME=71 HREF=\//;"	a
+72	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=66 HREF=http:\/\/info.cern.ch:8001\/cs.widener.edu:8000\/bmcr?> BMCR classical revie/;"	a
+73	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=56 HREF=Physics\/HEP.html> High Energy Physics<\/A> , <A NAME=73 HREF=http:\/\/sunsi/;"	a
+74	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> Roget's <A NAME=62 HREF=http:\/\/info.cern.ch:8001\/wais.cic.net:210\/roget-thesaurus?>Thes/;"	a
+78	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD> US<A NAME=78 HREF=http:\/\/fatty.law.cornell.edu.:80\/usr2\/wwwtext\/lii.table.html> Copyri/;"	a
+8	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=8 HREF="http:\/\/fatty.law.cornell.edu.:80\/usr2\/wwwtext\/lii.table.html">Cornell Law scho/;"	a
+9	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^be text: it can include graphics, video and <A NAME=9 HREF=Talks\/YesWeCan.snd>sound<\/A> , for /;"	a
+Aim	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^<H2>Aim<\/H2>The basic aim of the project is to$/;"	i
+Browse the WAIS servers	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^<H2>Browse the WAIS servers<\/H2>It's sometimes been a bit difficult$/;"	i
+Client software	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^<H2>Client software<\/H2>Three developments on the clients$/;"	i
+Code distribution	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^<H2>Code distribution<\/H2>Code written at CERN  is covered$/;"	i
+Collaboration	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^<H2>Collaboration<\/H2>We encourage collaboration by academic$/;"	i
+DNS	mywget.py	/^class DNS:$/;"	c
+Frequently Asked Questions on W3	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^<H1>Frequently Asked Questions on W3<\/H1>An FAQ list is really a cop-out from$/;"	h
+GETREQUEST	mywget.py	/^    GETREQUEST =    "GET {} HTTP\/1.1\\r\\n" + \\$/;"	v	class:HTTP
+General Overview	tmp/info.cern.ch/hypertext/DataSources/Top.html	/^<h1>General Overview<\/h1>$/;"	h
+HTTP	mywget.py	/^class HTTP:$/;"	c
+Information by Subject	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<H1>Information by Subject<\/H1>See also arrangements by<A NAME=63 HREF=..\/byOrganisation\/Over/;"	h
+Information provider view	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<H3>Information provider view<\/H3>The WWW browsers can access many existing data systems via ex/;"	j
+More and more hypertext on line	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^<H2>More and more hypertext on line<\/H2>New W3 servers have appeared at <A$/;"	i
+PORT	mywget.py	/^    PORT = 80$/;"	v	class:HTTP
+Policy	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^<H1>Policy<\/H1>This outlines the policy of  the$/;"	h
+Protocols and Data Formats	tmp/info.cern.ch/hypertext/WWW/Policy.html	/^<H2>Protocols and Data Formats<\/H2>The definition of protocols such$/;"	i
+Reader view	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<H3>Reader view<\/H3>The WWW world consists of documents, and links.  Indexes are special$/;"	j
+Try it	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<H3>Try it<\/H3>You can try the simple <A NAME=4 HREF=LineMode\/Browser.html>line mode browser<\//;"	j
+What is HyperText	tmp/info.cern.ch/hypertext/WWW/WhatIs.html	/^<H1>What is HyperText<\/H1>Hypertext is text which is not constrained to be linear.<P>$/;"	h
+World Wide Web	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^<H1>World Wide Web<\/H1>The WorldWideWeb (W3) is a wide-area<A$/;"	h
+World-Wide Web News November 1992	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^<H1>World-Wide Web News November 1992<\/H1>(As usual, this is distributed in$/;"	h
+WorldWideWeb - Summary	tmp/info.cern.ch/hypertext/WWW/Summary.html	/^<H1>WorldWideWeb - Summary<\/H1>The <A NAME=6 HREF=TheProject.html>WWW<\/A> project merges the t/;"	h
+_constructGetRequest	mywget.py	/^    def _constructGetRequest(self, hostName, fileName, connection="close"):$/;"	m	class:HTTP
+_constructQuery	mywget.py	/^    def _constructQuery(self, hostName):$/;"	m	class:DNS
+_decodeResponse	mywget.py	/^    def _decodeResponse(self, dnsresponse):$/;"	m	class:DNS
+_parseHeader	mywget.py	/^    def _parseHeader(self, httpHeader):$/;"	m	class:HTTP
+_splitResponse	mywget.py	/^    def _splitResponse(self, httpRequest):$/;"	m	class:HTTP
+astro	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=astro HREF=http:\/\/sunsite.unc.edu:80\/home\/fullton\/hypertext\/nasa.html> Abstrac/;"	a
+astrophysics	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DT><A NAME=astrophysics>Astronomy and Astrophysics<\/A>$/;"	a
+clientSocket	tmp/http.py	/^clientSocket = socket(AF_INET, SOCK_STREAM)$/;"	v
+dns	mywget.py	/^    dns = DNS()$/;"	v
+dnsServer	mywget.py	/^    dnsServer = "8.8.8.8"$/;"	v	class:DNS
+dnsServerPort	mywget.py	/^    dnsServerPort = 53$/;"	v	class:DNS
+filePath	mywget.py	/^        hostName, filePath = parseURL(url)$/;"	v
+getFileName	mywget.py	/^def getFileName(filePath):$/;"	f
+hostIP	mywget.py	/^            hostIP = hostNameIPDict[hostName]$/;"	v
+hostIP	mywget.py	/^        hostIP = ''$/;"	v
+hostName	mywget.py	/^        hostName, filePath = parseURL(url)$/;"	v
+hostName	tmp/http.py	/^hostName = "info.cern.ch"$/;"	v
+hostNameIPDict	mywget.py	/^    hostNameIPDict = {}$/;"	v
+http://info.cern.ch - home of the first website	tmp/index.html	/^<h1>http:\/\/info.cern.ch - home of the first website<\/h1>$/;"	h
+http://info.cern.ch - home of the first website	tmp/info.cern.ch/index.html	/^<h1>http:\/\/info.cern.ch - home of the first website<\/h1>$/;"	h
+msg	tmp/http.py	/^msg = clientSocket.recv(1024)$/;"	v
+parseURL	mywget.py	/^def parseURL(url):$/;"	f
+recvResponse	mywget.py	/^    def recvResponse(self, socket):$/;"	m	class:HTTP
+resolve	mywget.py	/^    def resolve(self, hostName):$/;"	m	class:DNS
+sendRequest	mywget.py	/^    def sendRequest(self, socket, hostName, fileName):$/;"	m	class:HTTP
+url	mywget.py	/^        url = sys.argv[i]$/;"	v
+weather	tmp/info.cern.ch/hypertext/DataSources/bySubject/Overview.html	/^<DD><A NAME=weather HREF=gopher:\/\/mermaid.micro.umn.edu:70\/11\/Weather> US weather<\/A> , sta/;"	a
+wget	mywget.py	/^def wget(hostName, hostIP, filePath):$/;"	f
+wgetThread	mywget.py	/^        wgetThread = Thread(target=wget, args=(hostName, hostIP, filePath))$/;"	v
+z13	tmp/info.cern.ch/hypertext/WWW/News/9211.html	/^NAME=z13 HREF="http:\/\/rd13doc:80\/">RD13<\/A>.<P>$/;"	a
+z54	tmp/info.cern.ch/hypertext/WWW/TheProject.html	/^NAME=z54 HREF="..\/DataSources\/WWW\/Servers.html">W3 servers<\/A>, etc.$/;"	a
+z6	tmp/info.cern.ch/hypertext/WWW/FAQ/List.html	/^NAME=z6 HREF="Bootstrap.html">I am just starting: how do I find$/;"	a
